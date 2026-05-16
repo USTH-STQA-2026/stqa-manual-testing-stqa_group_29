@@ -1,0 +1,175 @@
+{
+  "main": {
+    "id": "427a5fa8d2e34920",
+    "type": "split",
+    "children": [
+      {
+        "id": "ef68f8a2f36169da",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "87ca819c333918c6",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "New tab"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "7cb69d8d11b2a924",
+    "type": "mobile-drawer",
+    "children": [
+      {
+        "id": "3a1de9e3c1689660",
+        "type": "leaf",
+        "state": {
+          "type": "file-explorer",
+          "state": {
+            "sortOrder": "alphabetical",
+            "autoReveal": false
+          },
+          "icon": "lucide-folder-closed",
+          "title": "Files"
+        }
+      },
+      {
+        "id": "8d9cef7c8914528c",
+        "type": "leaf",
+        "state": {
+          "type": "search",
+          "state": {
+            "query": "",
+            "matchingCase": false,
+            "explainSearch": false,
+            "collapseAll": false,
+            "extraContext": false,
+            "sortOrder": "alphabetical"
+          },
+          "icon": "lucide-search",
+          "title": "Search"
+        }
+      },
+      {
+        "id": "6a2d96a5931913fb",
+        "type": "leaf",
+        "state": {
+          "type": "tag",
+          "state": {
+            "sortOrder": "frequency",
+            "useHierarchy": true,
+            "showSearch": false,
+            "searchQuery": ""
+          },
+          "icon": "lucide-tags",
+          "title": "Tags"
+        }
+      },
+      {
+        "id": "dfd83d5bc5a80d37",
+        "type": "leaf",
+        "state": {
+          "type": "bookmarks",
+          "state": {},
+          "icon": "lucide-bookmark",
+          "title": "Bookmarks"
+        }
+      }
+    ],
+    "currentTab": 0
+  },
+  "right": {
+    "id": "eee54b28aba34958",
+    "type": "mobile-drawer",
+    "children": [
+      {
+        "id": "4b19a9b84acd4aa9",
+        "type": "leaf",
+        "state": {
+          "type": "backlink",
+          "state": {
+            "file": "(chấm công).md",
+            "collapseAll": true,
+            "extraContext": false,
+            "sortOrder": "alphabetical",
+            "showSearch": false,
+            "searchQuery": "",
+            "backlinkCollapsed": false,
+            "unlinkedCollapsed": true
+          },
+          "icon": "links-coming-in",
+          "title": "Backlinks"
+        }
+      },
+      {
+        "id": "7e7f5763926b7381",
+        "type": "leaf",
+        "state": {
+          "type": "outgoing-link",
+          "state": {
+            "file": "- chấm công -.md",
+            "linksCollapsed": false,
+            "unlinkedCollapsed": true
+          },
+          "icon": "links-going-out",
+          "title": "Outgoing links"
+        }
+      },
+      {
+        "id": "7ab176c76ec5fdb1",
+        "type": "leaf",
+        "state": {
+          "type": "outline",
+          "state": {
+            "file": "(chấm công).md",
+            "followCursor": false,
+            "showSearch": false,
+            "searchQuery": ""
+          },
+          "icon": "lucide-list",
+          "title": "Outline"
+        }
+      }
+    ],
+    "currentTab": 2
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "bases:Create new base": false,
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "87ca819c333918c6",
+  "lastOpenFiles": [
+    "0_TỰ CẢI THIỆN/A. Tự tóm tắt tình hình học tập.md",
+    "egpu.md",
+    "0_TỰ CẢI THIỆN/Z. How to use Cold Turkey Blocker.md",
+    "Nhật kí/2026, tháng 02.md",
+    "3. Dealing with bad habits.md",
+    "4. Entertainment.md",
+    "B. Tự tóm tắt tình hình học tập.md",
+    "Nhật kí/2025, tháng 11.md",
+    "A. Kế hoạch hoá cuộc đời.md",
+    "Fix music.md",
+    "0. Self-actualization.md",
+    "B. External references.md",
+    "Music.md",
+    "Dealing with bad habits.md",
+    "Hygiene and diet.md",
+    "(Kế hoạch hoá cuộc đời).md",
+    "(chấm công).md",
+    "Listening to music.md",
+    "(Self-actualization).md",
+    "- chấm công -.md"
+  ]
+}

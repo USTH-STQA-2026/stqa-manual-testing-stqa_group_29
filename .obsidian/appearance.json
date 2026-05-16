@@ -1,0 +1,10 @@
+{
+  "accentColor": "#97e7f7",
+  "cssTheme": "Obsidianite",
+  "baseFontSize": 17,
+  "interfaceFontFamily": "Inter,JetBrains Mono",
+  "textFontFamily": "Arial,Times New Roman",
+  "monospaceFontFamily": "JetBrains Mono",
+  "theme": "system",
+  "baseFontSizeAction": true
+}

@@ -69,9 +69,9 @@
 <!-- Tự tổ chức bảng test case: có thể chia nhóm theo chức năng, theo REQ, hoặc theo luồng nghiệp vụ — tùy nhóm quyết định. -->
 <!-- Mỗi TC phải ánh xạ ngược về ít nhất 1 dòng trong bảng IDM ở Bước 1. -->
 
-| Mã TC | Mục tiêu kiểm thử | Tiền điều kiện | Bước thực hiện | Dữ liệu đầu vào | Kết quả mong đợi | REQ | Kỹ thuật |
-|-------|-------------------|---------------|---------------|-----------------|------------------|-----|---------|
-| | | | | | | | |
+| Mã TC   | Mục tiêu kiểm thử                     | Tiền điều kiện  | Bước thực hiện                                                                  | Dữ liệu đầu vào                                         | Kết quả mong đợi                                                           | REQ    | Kỹ thuật |
+| ------- | ------------------------------------- | --------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------- | -------------------------------------------------------------------------- | ------ | -------- |
+| TC-1-01 | Đăng nhập bằng email và mật khẩu đúng | Trang web đã mở | Nhập vào lần lượt librarian@library.com và admin123 vào các ô Email và Mật khẩu | - Email: librarian@library.com <br>- Mật khẩu: admin123 | Hiện trang chủ của thư viện, với tên người dùng tương ứng "Nguyễn Thủ Thư" | REQ-01 | EP       |
 
 ---
 

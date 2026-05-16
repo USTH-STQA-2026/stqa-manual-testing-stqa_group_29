@@ -1,0 +1,16 @@
+{
+  "royal-velvet@@inline-document-title-color": "doc-title-rainbow",
+  "blue-topaz-theme@@color-scheme-options": "color-scheme-options-avocado-topaz",
+  "prime@@icon-color": "icon-blue",
+  "prime@@disable-file-and-folder-icons": true,
+  "prime@@hide-status-bar": false,
+  "prime@@hide-header-title": false,
+  "prime@@bold-choose-color-default": "bold-green",
+  "prime@@italic-choose-color-default": "italic-yellow",
+  "prime@@highlight-enable-color-custom": true,
+  "prime@@highlight-color-custom-bg": "#58FAFF",
+  "prime@@syntax-highlight-theme-dark": "one-dark-dark",
+  "prime@@accent-color": "accent-blue",
+  "prime@@green-alternative-color": true,
+  "prime@@styled-scrollbars": true
+}
