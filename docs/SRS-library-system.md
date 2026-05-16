@@ -97,13 +97,13 @@ Hệ thống quản lý mượn sách cho một thư viện nhỏ. Hai vai trò 
 
 ### REQ-01: Đăng nhập / Login
 
-| Mục | Nội dung |
-|-----|---------|
-| **Mô tả** | Người dùng đăng nhập bằng email và mật khẩu |
-| **Input** | Email, mật khẩu |
-| **Quy tắc** | `email@domain.ext` + mật khẩu đúng → chuyển sang trang chủ. Sai → hiểu thị thông báo lỗi phù hợp. |
+| Mục               | Nội dung                                                                                                              |
+| ----------------- | --------------------------------------------------------------------------------------------------------------------- |
+| **Mô tả**         | Người dùng đăng nhập bằng email và mật khẩu                                                                           |
+| **Input**         | Email, mật khẩu                                                                                                       |
+| **Quy tắc**       | `email@domain.ext` + mật khẩu đúng → chuyển sang trang chủ. Sai → hiểu thị thông báo lỗi phù hợp.                     |
 | **Thông báo lỗi** | "Không tìm thấy thành viên" (email sai), "Mật khẩu không đúng" (MK sai), "Vui lòng nhập email và mật khẩu" (bỏ trống) |
-| **Sau đăng nhập** | Hiển thị tên người dùng + vai trò trên thanh ứng dụng (AppBar) |
+| **Sau đăng nhập** | Hiển thị tên người dùng + vai trò trên thanh ứng dụng (AppBar)                                                        |
 
 ### REQ-02: Xem danh sách sách / View Book List
 

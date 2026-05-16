@@ -1,7 +1,6 @@
 # Bài tập nhóm — Thảo luận & Nghiên cứu sâu
 
 > 📖 **Textbook:** Paul Ammann & Jeff Offutt, *Introduction to Software Testing*, 2nd Edition.
->
 > **Mục tiêu:** Hiểu các khái niệm mới: **RIPR Model**, **Model-Driven Test Design**, **Test Oracle**.
 
 ---
