@@ -107,12 +107,12 @@ Hệ thống quản lý mượn sách cho một thư viện nhỏ. Hai vai trò 
 
 ### REQ-02: Xem danh sách sách / View Book List
 
-| Mục | Nội dung |
-|-----|---------|
-| **Mô tả** | Hiển thị tất cả sách trong thư viện |
+| Mục                    | Nội dung                                                                 |
+| ---------------------- | ------------------------------------------------------------------------ |
+| **Mô tả**              | Hiển thị tất cả sách trong thư viện                                      |
 | **Thông tin mỗi sách** | Tên sách, tác giả, thể loại, năm xuất bản, trạng thái (Có sẵn / Đã mượn) |
-| **Quyền truy cập** | Cả Thủ thư và Thành viên đều xem được |
-| **Cập nhật real-time** | Khi sách được mượn/trả → trạng thái cập nhật ngay lập tức |
+| **Quyền truy cập**     | Cả Thủ thư và Thành viên đều xem được                                    |
+| **Cập nhật real-time** | Khi sách được mượn/trả → trạng thái cập nhật ngay lập tức                |
 
 ### REQ-03: Tìm kiếm và lọc sách / Search & Filter Books
 
@@ -172,14 +172,14 @@ Hệ thống quản lý mượn sách cho một thư viện nhỏ. Hai vai trò 
 
 ### 3.1. Tài khoản / Accounts
 
-| Email | Mật khẩu | Vai trò | Trạng thái | ID |
-|-------|----------|---------|-----------|-----|
-| `librarian@library.com` | `admin123` | Thủ thư | Hoạt động | LIB001 |
-| `ba.nguyen@email.com` | `password123` | Thành viên | Hoạt động | MEM002 |
-| `dam.tran@email.com` | `password123` | Thành viên | Hoạt động | MEM003 |
-| `cu.le@email.com` | `password123` | Thành viên | Tạm ngưng | MEM004 |
-| `binh.pham@email.com` | `password123` | Thành viên | Hết hạn | MEM005 |
-| `biet.hoang@email.com` | `password123` | Thành viên | Hoạt động | MEM006 |
+| Email                   | Mật khẩu      | Vai trò    | Trạng thái | ID     |
+| ----------------------- | ------------- | ---------- | ---------- | ------ |
+| `librarian@library.com` | `admin123`    | Thủ thư    | Hoạt động  | LIB001 |
+| `ba.nguyen@email.com`   | `password123` | Thành viên | Hoạt động  | MEM002 |
+| `dam.tran@email.com`    | `password123` | Thành viên | Hoạt động  | MEM003 |
+| `cu.le@email.com`       | `password123` | Thành viên | Tạm ngưng  | MEM004 |
+| `binh.pham@email.com`   | `password123` | Thành viên | Hết hạn    | MEM005 |
+| `biet.hoang@email.com`  | `password123` | Thành viên | Hoạt động  | MEM006 |
 
 ### 3.2. Sách / Books
 

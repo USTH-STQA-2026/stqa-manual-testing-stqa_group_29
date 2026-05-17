@@ -7,19 +7,19 @@
 | Thông tin      |                     |
 | -------------- | ------------------- |
 | **Nhóm**       | Nhóm 29             |
-| **Ngày tạo**   | 16/05/2026`         |
+| **Ngày tạo**   | 16/05/2026          |
 | **Hệ thống**   | https://stqa.rbc.vn |
 | **Tham chiếu** | SRS v1.0            |
 
 ---
 
-## Bước 1: Mô hình hóa miền đầu vào — Input Domain Modeling (IDM)
+# Bước 1: Mô hình hóa miền đầu vào — Input Domain Modeling (IDM)
 
 > 📖 **Textbook:** Chương 6 — *Input Domain Modeling*, Paul Ammann & Jeff Offutt.
 > **Trước khi viết Test Case**, nhóm **phải** phân tích miền đầu vào bằng bảng IDM bên dưới.
 > Mỗi chức năng cần xác định: **Đặc tính (Characteristic)**, **Phân vùng (Block/Partition)**, và **Giá trị đại diện (Value)**.
 
-### IDM — Đăng nhập (REQ-01)
+## IDM — Đăng nhập (REQ-01)
 
 | Đặc tính (Characteristic)  | Phân vùng (Block) | Giá trị đại diện (Value) | Kết quả mong đợi             |
 | -------------------------- | ----------------- | ------------------------ | ---------------------------- |
@@ -29,8 +29,8 @@
 |                            | Sai               | `wrongpass`              | Thông báo lỗi                |
 | Ô nhập có rỗng?            | Không rỗng        | (giá trị bất kỳ)         | Xử lý bình thường            |
 |                            | Rỗng              | `""`                     | Thông báo "Vui lòng nhập..." |
-
-### IDM — Tìm kiếm sách (REQ-03)
+## IDM - Xem danh sách sách (REQ-02) | chưa làm
+## IDM — Tìm kiếm sách (REQ-03)
 
 | Đặc tính (Characteristic) | Phân vùng (Block) | Giá trị đại diện (Value) | Kết quả mong đợi |
 |---|---|---|---|
@@ -40,7 +40,7 @@
 | Phân biệt HOA/thường? | Chữ thường | `"flutter"` | Kết quả giống "Flutter" |
 | | Chữ HOA | `"FLUTTER"` | Kết quả giống "Flutter" |
 
-### IDM — Mượn sách (REQ-04, REQ-05)
+## IDM — Mượn sách (REQ-04, REQ-05)
 
 | Đặc tính (Characteristic) | Phân vùng (Block) | Giá trị đại diện (Value) | Kết quả mong đợi |
 |---|---|---|---|
@@ -53,7 +53,7 @@
 | Số sách đang mượn? | < 3 (BVA: 0, 1, 2) | MEM006 (0 sách) | Cho phép mượn |
 | | = 3 (BVA: giới hạn) | MEM đã mượn 3 sách | Từ chối, thông báo vượt giới hạn |
 
-### IDM — `<!-- Nhóm tự bổ sung cho REQ-05 đến REQ-08 -->`
+## IDM — `<!-- Nhóm tự bổ sung cho REQ-05 đến REQ-08 -->`
 
 | Đặc tính (Characteristic) | Phân vùng (Block) | Giá trị đại diện (Value) | Kết quả mong đợi |
 |---|---|---|---|
@@ -63,26 +63,36 @@
 
 ---
 
-## Bước 2: Test Cases
+# Bước 2: Test Cases
 *Chúng ta sẽ phân nhóm các trường hợp kiểm thử theo REQ 01-08.*
+*Tên các test cases đặt theo định dạng: TC-(số REQ)-(01, 02, 03, ...)*
 
 <!-- Tự tổ chức bảng test case: có thể chia nhóm theo chức năng, theo REQ, hoặc theo luồng nghiệp vụ — tùy nhóm quyết định. -->
 <!-- Mỗi TC phải ánh xạ ngược về *ít nhất* 1 dòng trong bảng IDM ở Bước 1. -->
 
-| Mã TC    | Mục tiêu kiểm thử                     | Tiền điều kiện                                   | Bước thực hiện                                                                   | Dữ liệu đầu vào                                          | Kết quả mong đợi                                                           | REQ    | Kỹ thuật |
-| -------- | ------------------------------------- | ------------------------------------------------ | -------------------------------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------------------------- | ------ | -------- |
-| TC-01-01 | Đăng nhập bằng email và mật khẩu đúng | Trang web đã mở                                  | Nhập vào lần lượt librarian@library.com và admin123 vào các ô Email và Mật khẩu  | - Email: librarian@library.com <br>- Mật khẩu: admin123  | Hiện trang chủ của thư viện, với tên người dùng tương ứng "Nguyễn Thủ Thư" | REQ-01 | EP       |
-| TC-01-02 | Đăng nhập bằng email sai              | Trang web đã mở                                  | Nhập vào lần lượt noone@email.com và password123                                 | - Email: noone@email.com<br>- Mật khẩu: admin123         | Không đăng nhập được, báo lỗi "Không tìm thấy thành viên"                  | REQ-01 | EP       |
-| TC-01-03 | Đăng nhập bằng mật khẩu sai           | Trang web đã mở, email của thành viên đã tồn tại | Nhập vào lần lượt librarian@library.com và wrongpass                             | - Email: librarian@library.com <br>- Mật khẩu: wrongpass | Không đăng nhập được, báo lỗi "Mật khẩu không đúng"                        | REQ-01 | EP       |
-| TC-01-04 | Bỏ trống email, mật khẩu hoặc cả hai  | Trang web đã mở                                  | Không nhập gì, hoặc chỉ nhập a@b.c vào ô email, hoặc chỉ nhập abc vào ô mật khẩu | Rỗng, hoặc chỉ email: a@b.c, hoặc chỉ mật khẩu: abc      | Không đăng nhập được, báo lỗi "Vui lòng nhập email và mật khẩu"            | REQ-01 | EP       |
-|          |                                       |                                                  |                                                                                  |                                                          |                                                                            |        |          |
+| Mã TC    | Mục tiêu kiểm thử                            | Tiền điều kiện                                                         | Bước thực hiện                                                                   | Dữ liệu đầu vào                                          | Kết quả mong đợi                                                                                                            | REQ    | Kỹ thuật |
+| -------- | -------------------------------------------- | ---------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- | ------ | -------- |
+| TC-01-01 | Đăng nhập bằng email và mật khẩu đúng        | Trang web đã mở                                                        | Nhập vào lần lượt librarian@library.com và admin123 vào các ô Email và Mật khẩu  | - Email: librarian@library.com <br>- Mật khẩu: admin123  | Hiện trang chủ của thư viện, với tên người dùng tương ứng "Nguyễn Thủ Thư"                                                  | REQ-01 | EP       |
+| TC-01-02 | Đăng nhập bằng email sai                     | Trang web đã mở                                                        | Nhập vào lần lượt noone@email.com và password123                                 | - Email: noone@email.com<br>- Mật khẩu: admin123         | Không đăng nhập được, báo lỗi "Không tìm thấy thành viên"                                                                   | REQ-01 | EP       |
+| TC-01-03 | Đăng nhập bằng mật khẩu sai                  | Trang web đã mở, email của thành viên đã tồn tại                       | Nhập vào lần lượt librarian@library.com và wrongpass                             | - Email: librarian@library.com <br>- Mật khẩu: wrongpass | Không đăng nhập được, báo lỗi "Mật khẩu không đúng"                                                                         | REQ-01 | EP       |
+| TC-01-04 | Bỏ trống email, mật khẩu hoặc cả hai         | Trang web đã mở                                                        | Không nhập gì, hoặc chỉ nhập a@b.c vào ô email, hoặc chỉ nhập abc vào ô mật khẩu | Rỗng, hoặc chỉ email: a@b.c, hoặc chỉ mật khẩu: abc      | Không đăng nhập được, báo lỗi "Vui lòng nhập email và mật khẩu"                                                             | REQ-01 | EP       |
+| TC-02-01 | Xem danh sách sách với tư cách quản trị viên | Đã đăng nhập trang web với tư cách quản trị viên                       | Đếm và xem chi tiết các tựa sách hiện trên trang chủ                             | x                                                        | Hiện toàn bộ 20 tựa sách với đầy đủ các thông tin: tên sách, tác giả, thể loại, năm xuất bản, trạng thái (Có sẵn / Đã mượn) | REQ-02 | EP       |
+| TC-02-02 | Xem danh sách sách với tư cách thành viên    | Đã đăng nhập trang web với tư cách thành viên                          | (như trên)                                                                       | x                                                        | (như trên)                                                                                                                  | REQ-02 | EP       |
+| TC-02-03 | Cập nhật lập tức khi mượn/trả sách           | Đã đăng nhập với tư cách thành viên; thành viên đủ điều kiện mượn sách | Bấm nút mượn tựa sách BOOK001 "Lập trình Flutter cơ bản"                         | x                                                        | Trạng thái của tựa sách đổi từ "Có sẵn" thành "Đang mượn"                                                                   | REQ-02 | EP       |
 
 ---
 
-## Tổng hợp
+# Tổng hợp
 *Do chia các trường hợp kiểm thử theo REQ nên cột "REQ phủ" sẽ được lược bỏ.*
 
 | Nhóm chức năng | Số TC             | Kỹ thuật IDM áp dụng |
 | -------------- | ----------------- | -------------------- |
 | REQ-01         | 4                 | EP                   |
+| REQ-02         | 3                 | EP                   |
+| REQ-03         |                   |                      |
+| REQ-04         |                   |                      |
+| REQ-05         |                   |                      |
+| REQ-06         |                   |                      |
+| REQ-07         |                   |                      |
+| REQ-08         |                   |                      |
 | **Tổng**       | **<!-- ≥ 20 -->** |                      |

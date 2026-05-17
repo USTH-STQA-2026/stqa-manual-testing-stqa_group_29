@@ -12,7 +12,7 @@
 
 ---
 
-## Kết quả chi tiết
+# Kết quả chi tiết
 
 | Mã TC    | Nhóm chức năng | Kết quả mong đợi (tóm tắt)                                      | Kết quả thực tế | Kết luận | Minh chứng                                                           | Bug |
 | -------- | -------------- | --------------------------------------------------------------- | --------------- | -------- | -------------------------------------------------------------------- | --- |
@@ -20,27 +20,29 @@
 | TC-01-02 | REQ-01         | Không đăng nhập được, báo lỗi "Không tìm thấy thành viên"       | như mong đợi    | **Pass** | [[TC-01-02.png]]                                                     |     |
 | TC-01-03 | REQ-01         | Không đăng nhập được, báo lỗi "Mật khẩu không đúng"             | như mong đợi    | **Pass** | [[TC-01-03.png]]                                                     |     |
 | TC-01-04 | REQ-01         | Không đăng nhập được, báo lỗi "Vui lòng nhập email và mật khẩu" | như mong đợi    | **Pass** | [[TC-01-04 (1).png]]<br>[[TC-01-04 (2).png]]<br>[[TC-01-04 (3).png]] |     |
-|          |                |                                                                 |                 |          |                                                                      |     |
+| TC-02-01 | REQ-02         | Hiện toàn bộ 20 tựa sách với đầy đủ các thông tin               | như mong đợi    | **Pass** | [[TC-02-01 (1).png]]<br>[[TC-02-01 (2).png]]                         |     |
+| TC-02-02 | REQ-02         | (như trên)                                                      | như mong đợi    | **Pass** | [[TC-02-02 (1).png]]<br>[[TC-02-02 (2).png]]                         |     |
+| TC-02-03 | REQ-02         | Trạng thái của tựa sách đổi từ "Có sẵn" thành "Đang mượn"       | như mong đợi    | **Pass** | [[TC-02-03.png]]                                                     |     |
 
 ---
 
-## Tổng hợp kết quả
+# Tổng hợp kết quả
 
 | Chỉ số            | Giá trị |
 | ----------------- | ------- |
-| Tổng số test case | 4       |
-| Pass              | 4       |
+| Tổng số test case | 7       |
+| Pass              | 7       |
 | Fail              | 0       |
 | Blocked           | 0       |
 | Not Run           | 0       |
 | **Tỷ lệ Pass**    | 100%    |
 
-### Kết quả theo nhóm chức năng
+## Kết quả theo nhóm chức năng
 
 | Nhóm   | Tổng TC | Pass | Fail | Tỷ lệ Pass |
 | ------ | ------- | ---- | ---- | ---------- |
 | REQ-01 | 4       | 4    | 0    | 100%       |
-| REQ-02 |         |      |      |            |
+| REQ-02 | 3       | 3    | 0    | 100%       |
 | REQ-03 |         |      |      |            |
 | REQ-04 |         |      |      |            |
 | REQ-05 |         |      |      |            |
