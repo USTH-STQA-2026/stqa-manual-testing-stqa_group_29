@@ -42,16 +42,16 @@
 
 ## IDM — Mượn sách (REQ-04, REQ-05)
 
-| Đặc tính (Characteristic) | Phân vùng (Block) | Giá trị đại diện (Value) | Kết quả mong đợi |
-|---|---|---|---|
-| Trạng thái sách? | Có sẵn | BOOK001 | Cho phép mượn |
-| | Đang mượn | BOOK003 | Không cho phép |
-| | Thất lạc | BOOK007 | Không cho phép |
-| Trạng thái thành viên? | Hoạt động | MEM002 | Cho phép mượn |
-| | Tạm ngưng | MEM004 | Từ chối, thông báo lỗi |
-| | Hết hạn | MEM005 | Từ chối, thông báo lỗi |
-| Số sách đang mượn? | < 3 (BVA: 0, 1, 2) | MEM006 (0 sách) | Cho phép mượn |
-| | = 3 (BVA: giới hạn) | MEM đã mượn 3 sách | Từ chối, thông báo vượt giới hạn |
+| Đặc tính (Characteristic) | Phân vùng (Block)   | Giá trị đại diện (Value) | Kết quả mong đợi                 |
+| ------------------------- | ------------------- | ------------------------ | -------------------------------- |
+| Trạng thái sách?          | Có sẵn              | BOOK001                  | Cho phép mượn                    |
+|                           | Đang mượn           | BOOK003                  | Không cho phép                   |
+|                           | Thất lạc            | BOOK007                  | Không cho phép                   |
+| Trạng thái thành viên?    | Hoạt động           | MEM002                   | Cho phép mượn                    |
+|                           | Tạm ngưng           | MEM004                   | Từ chối, thông báo lỗi           |
+|                           | Hết hạn             | MEM005                   | Từ chối, thông báo lỗi           |
+| Số sách đang mượn?        | < 3 (BVA: 0, 1, 2)  | MEM006 (0 sách)          | Cho phép mượn                    |
+|                           | = 3 (BVA: giới hạn) | MEM đã mượn 3 sách       | Từ chối, thông báo vượt giới hạn |
 
 ## IDM — `<!-- Nhóm tự bổ sung cho REQ-05 đến REQ-08 -->`
 
@@ -70,15 +70,16 @@
 <!-- Tự tổ chức bảng test case: có thể chia nhóm theo chức năng, theo REQ, hoặc theo luồng nghiệp vụ — tùy nhóm quyết định. -->
 <!-- Mỗi TC phải ánh xạ ngược về *ít nhất* 1 dòng trong bảng IDM ở Bước 1. -->
 
-| Mã TC    | Mục tiêu kiểm thử                            | Tiền điều kiện                                                         | Bước thực hiện                                                                   | Dữ liệu đầu vào                                          | Kết quả mong đợi                                                                                                            | REQ    | Kỹ thuật |
-| -------- | -------------------------------------------- | ---------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- | ------ | -------- |
-| TC-01-01 | Đăng nhập bằng email và mật khẩu đúng        | Trang web đã mở                                                        | Nhập vào lần lượt librarian@library.com và admin123 vào các ô Email và Mật khẩu  | - Email: librarian@library.com <br>- Mật khẩu: admin123  | Hiện trang chủ của thư viện, với tên người dùng tương ứng "Nguyễn Thủ Thư"                                                  | REQ-01 | EP       |
-| TC-01-02 | Đăng nhập bằng email sai                     | Trang web đã mở                                                        | Nhập vào lần lượt noone@email.com và password123                                 | - Email: noone@email.com<br>- Mật khẩu: admin123         | Không đăng nhập được, báo lỗi "Không tìm thấy thành viên"                                                                   | REQ-01 | EP       |
-| TC-01-03 | Đăng nhập bằng mật khẩu sai                  | Trang web đã mở, email của thành viên đã tồn tại                       | Nhập vào lần lượt librarian@library.com và wrongpass                             | - Email: librarian@library.com <br>- Mật khẩu: wrongpass | Không đăng nhập được, báo lỗi "Mật khẩu không đúng"                                                                         | REQ-01 | EP       |
-| TC-01-04 | Bỏ trống email, mật khẩu hoặc cả hai         | Trang web đã mở                                                        | Không nhập gì, hoặc chỉ nhập a@b.c vào ô email, hoặc chỉ nhập abc vào ô mật khẩu | Rỗng, hoặc chỉ email: a@b.c, hoặc chỉ mật khẩu: abc      | Không đăng nhập được, báo lỗi "Vui lòng nhập email và mật khẩu"                                                             | REQ-01 | EP       |
-| TC-02-01 | Xem danh sách sách với tư cách quản trị viên | Đã đăng nhập trang web với tư cách quản trị viên                       | Đếm và xem chi tiết các tựa sách hiện trên trang chủ                             | x                                                        | Hiện toàn bộ 20 tựa sách với đầy đủ các thông tin: tên sách, tác giả, thể loại, năm xuất bản, trạng thái (Có sẵn / Đã mượn) | REQ-02 | EP       |
-| TC-02-02 | Xem danh sách sách với tư cách thành viên    | Đã đăng nhập trang web với tư cách thành viên                          | (như trên)                                                                       | x                                                        | (như trên)                                                                                                                  | REQ-02 | EP       |
-| TC-02-03 | Cập nhật lập tức khi mượn/trả sách           | Đã đăng nhập với tư cách thành viên; thành viên đủ điều kiện mượn sách | Bấm nút mượn tựa sách BOOK001 "Lập trình Flutter cơ bản"                         | x                                                        | Trạng thái của tựa sách đổi từ "Có sẵn" thành "Đang mượn"                                                                   | REQ-02 | EP       |
+| Test Case ID | Test Objective                                | Preconditions                                                    | Test Steps                                                                                         | Input Data                                               | Expected Result                                                                                                          | REQ    | Testing Technique |
+| ------------ | --------------------------------------------- | ---------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ | ------ | ----------------- |
+| TC-01-01     | Login with correct email and password         | Website is opened                                                | Enter librarian@library.com  and `admin123` into the Email and Password fields respectively        | - Email: librarian@library.com <br>-Password: admin123   | Displays the library homepage with the corresponding username "Nguyen Thu Thu"                                           | REQ-01 | EP                |
+| TC-01-02     | Login with incorrect email                    | Website is opened                                                | Enter noone@email.com and `password123` respectively                                               | - Email: noone@email.com<br>- Password: admin123         | Login fails, displays error message: "Member not found"                                                                  | REQ-01 | EP                |
+| TC-01-03     | Login with incorrect password                 | Website is opened, member's email already exists                 | Enter librarian@library.com and `wrongpass` respectively                                           | - Email: librarian@library.com <br>- Password: wrongpass | Login fails, displays error message: "Incorrect password"                                                                | REQ-01 | EP                |
+| TC-01-04     | Leave email, password, or both blank          | Website is opened                                                | Leave blank, or only enter a@b.c into the email field, or only enter `abc` into the password field | Blank, or only email: a@b.c, or only password: abc       | Login fails, displays error message: "Please enter email and password""                                                  | REQ-01 | EP                |
+| TC-02-01     | View book list as an Administrator            | Logged into the website as an Administrator                      | Count and view details of books displayed on the homepage                                          | x                                                        | Displays all 20 book titles with full information: title, author, genre, publication year, status (Available / Borrowed) | REQ-02 | EP                |
+| TC-02-02     | View book list as a Member                    | Logged into the website as a Member                              | (Same as above)                                                                                    | x                                                        | (Same as above)                                                                                                          | REQ-02 | EP                |
+| TC-02-03     | Instant update upon borrowing/returning books | Logged in as a Member; member meets all criteria to borrow books | Click the borrow button for book BOOK001 "Lap trinh Flutter co ban"                                | x                                                        | The book's status changes from "Available" to "Borrowed"                                                                 | REQ-02 | EP                |
+|              |                                               |                                                                  |                                                                                                    |                                                          |                                                                                                                          |        |                   |
 
 ---
 

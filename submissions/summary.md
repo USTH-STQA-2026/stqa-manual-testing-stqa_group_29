@@ -6,11 +6,11 @@
 
 # 1. Thông tin nhóm
 
-| Mục | Thông tin |
-|-----|----------|
-| **Nhóm** | `<!-- Tên nhóm -->` |
-| **Lớp** | `<!-- VD: SE001.P11 -->` |
-| **Ngày báo cáo** | `<!-- DD/MM/YYYY -->` |
+| Mục                   | Thông tin                  |
+| --------------------- | -------------------------- |
+| **Nhóm**              | `<!-- Tên nhóm -->`        |
+| **Lớp**               | `<!-- VD: SE001.P11 -->`   |
+| **Ngày báo cáo**      | `<!-- DD/MM/YYYY -->`      |
 | **Hệ thống kiểm thử** | https://stqa.rbc.vn — v1.0 |
 
 ---
