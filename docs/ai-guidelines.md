@@ -11,6 +11,7 @@
 AI thường sinh expected result mơ hồ kiểu *"Hệ thống hoạt động bình thường"* hoặc *"Trang hiển thị kết quả"* — đó là **Null Oracle** (Ch.14). Bug thật sẽ lọt qua vì bạn không biết **cụ thể** phải kiểm tra gì.
 
 **Ví dụ:**
+
 ```
 ❌ AI thường sinh ra — Null Oracle:
    Expected Result: "Hệ thống xử lý yêu cầu thành công"
@@ -32,12 +33,12 @@ AI không biết hệ thống thư viện có **Seed Data** cụ thể (tài kho
 
 ## Cách dùng AI hiệu quả
 
-| NÊN | KHÔNG NÊN |
-|-----|-----------|
-| Copy SRS requirement → nhờ AI gợi ý vùng dữ liệu EP/BVA | Nhờ AI bịa test data — đã có `test-accounts.md` và Seed Data |
-| Nhờ AI rà soát lỗi chính tả, cải thiện văn phong bug report | Copy nguyên test case AI sinh ra mà không đối chiếu SRS |
+| NÊN                                                                     | KHÔNG NÊN                                                             |
+| ----------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| Copy SRS requirement → nhờ AI gợi ý vùng dữ liệu EP/BVA                 | Nhờ AI bịa test data — đã có `test-accounts.md` và Seed Data          |
+| Nhờ AI rà soát lỗi chính tả, cải thiện văn phong bug report             | Copy nguyên test case AI sinh ra mà không đối chiếu SRS               |
 | Copy thông báo lỗi từ hệ thống → nhờ AI phân tích đó là bug hay feature | Nhờ AI viết Expected Result rồi tin ngay — phải tự kiểm tra trong SRS |
-| Nhờ AI gợi ý negative scenarios bạn chưa nghĩ tới | Để AI quyết định test case nào quan trọng — bạn mới là Tester |
+| Nhờ AI gợi ý negative scenarios bạn chưa nghĩ tới                       | Để AI quyết định test case nào quan trọng — bạn mới là Tester         |
 
 ---
 
