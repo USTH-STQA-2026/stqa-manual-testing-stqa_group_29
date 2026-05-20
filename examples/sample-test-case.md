@@ -4,9 +4,10 @@
 
 ---
 
-| Mã TC | Mục tiêu kiểm thử | Tiền điều kiện | Bước thực hiện | Dữ liệu đầu vào | Kết quả mong đợi | REQ | Kỹ thuật |
-|-------|-------------------|---------------|---------------|-----------------|------------------|-----|--------|
-| TC-03 | Chia cho số 0 | Ứng dụng máy tính đã mở | 1. Nhập `10` vào ô số bị chia. 2. Chọn phép tính **Chia (/)**. 3. Nhập `0` vào ô số chia. 4. Nhấn nút **=**. | Số bị chia: `10`, Số chia: `0` | Hiển thị thông báo lỗi “Không thể chia cho 0”. Không hiển thị kết quả số. | REQ-02 | EP, BVA |
+| Mã TC | Mục tiêu kiểm thử | Tiền điều kiện          | Bước thực hiện                                                                                               | Dữ liệu đầu vào                | Kết quả mong đợi                                                          | REQ    | Kỹ thuật |
+| ----- | ----------------- | ----------------------- | ------------------------------------------------------------------------------------------------------------ | ------------------------------ | ------------------------------------------------------------------------- | ------ | -------- |
+| TC-03 | Chia cho số 0     | Ứng dụng máy tính đã mở | 1. Nhập `10` vào ô số bị chia. 2. Chọn phép tính **Chia (/)**. 3. Nhập `0` vào ô số chia. 4. Nhấn nút **=**. | Số bị chia: `10`, Số chia: `0` | Hiển thị thông báo lỗi “Không thể chia cho 0”. Không hiển thị kết quả số. | REQ-02 | EP, BVA  |
+|       |                   |                         |                                                                                                              |                                |                                                                           |        |          |
 
 ---
 
