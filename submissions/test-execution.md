@@ -24,7 +24,7 @@
 | TC-02-02 | REQ-02         | (như trên)                                                      | như mong đợi       | **Pass** | [[TC-02-02 (1).png]]<br>[[TC-02-02 (2).png]]                         |     |
 | TC-02-03 | REQ-02         | Trạng thái của tựa sách đổi từ "Có sẵn" thành "Đang mượn"       | như mong đợi       | **Pass** | [[TC-02-03.png]]                                                     |     |
 | TC-03-01 | REQ-03         | Hiển thị đúng tên sách tìm kiếm                                 | như mong đợi       | **Pass** | [[TC-03-01.png]]                                                     |     |
-| TC-03-02 | REQ-03         | Hiển thị tên sách ứng với đúng tên tác giả tìm kiếm             | như mong đợi       | **Pass** | [[TC-03-02 2.png]]                                                   |     |
+| TC-03-02 | REQ-03         | Hiển thị tên sách ứng với đúng tên tác giả tìm kiếm             | như mong đợi       | **Pass** | [[TC-03-02.png]]                                                     |     |
 | TC-03-03 | REQ-03         | Không hiển thị bất cứ sách nào                                  | không như mong đợi | **Fail** | [[TC-03-03.png]]                                                     |     |
 | TC-03-04 |                | Hiển thị tên sách tương ứng đúng với thể loại sách tìm kiếm     | như mong đợi       | **Pass** | [[TC-03-04.png]]                                                     |     |
 |          |                |                                                                 |                    |          |                                                                      |     |
