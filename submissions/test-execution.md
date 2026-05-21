@@ -11,41 +11,44 @@
 | **Hệ điều hành**  | Windows 11                |
 
 ---
+# Detailed results
 
-# Kết quả chi tiết
-
-| Mã TC    | Nhóm chức năng | Kết quả mong đợi (tóm tắt)                                      | Kết quả thực tế | Kết luận | Minh chứng                                                           | Bug |
-| -------- | -------------- | --------------------------------------------------------------- | --------------- | -------- | -------------------------------------------------------------------- | --- |
-| TC-01-01 | REQ-01         | Hiện trang chủ, tên người dùng "Nguyễn Thủ Thư"                 | như mong đợi    | **Pass** | [[TC-01-01.png]]                                                     |     |
-| TC-01-02 | REQ-01         | Không đăng nhập được, báo lỗi "Không tìm thấy thành viên"       | như mong đợi    | **Pass** | [[TC-01-02.png]]                                                     |     |
-| TC-01-03 | REQ-01         | Không đăng nhập được, báo lỗi "Mật khẩu không đúng"             | như mong đợi    | **Pass** | [[TC-01-03.png]]                                                     |     |
-| TC-01-04 | REQ-01         | Không đăng nhập được, báo lỗi "Vui lòng nhập email và mật khẩu" | như mong đợi    | **Pass** | [[TC-01-04 (1).png]]<br>[[TC-01-04 (2).png]]<br>[[TC-01-04 (3).png]] |     |
-| TC-02-01 | REQ-02         | Hiện toàn bộ 20 tựa sách với đầy đủ các thông tin               | như mong đợi    | **Pass** | [[TC-02-01 (1).png]]<br>[[TC-02-01 (2).png]]                         |     |
-| TC-02-02 | REQ-02         | (như trên)                                                      | như mong đợi    | **Pass** | [[TC-02-02 (1).png]]<br>[[TC-02-02 (2).png]]                         |     |
-| TC-02-03 | REQ-02         | Trạng thái của tựa sách đổi từ "Có sẵn" thành "Đang mượn"       | như mong đợi    | **Pass** | [[TC-02-03.png]]                                                     |     |
+| TC       | REQ    | Expected result (short summary)                                       | Observed result    | Conclusion | Evidence                                                             | Bug |
+| -------- | ------ | --------------------------------------------------------------------- | ------------------ | ---------- | -------------------------------------------------------------------- | --- |
+| TC-01-01 | REQ-01 | Display the library homepage with the username "Nguyễn Thủ Thư"       | **as expected**    | **Pass**   | [[TC-01-01.png]]                                                     |     |
+| TC-01-02 | REQ-01 | Login fails, display error message: "Member not found"                | **as expected**    | **Pass**   | [[TC-01-02.png]]                                                     |     |
+| TC-01-03 | REQ-01 | Login fails, display error message: "Incorrect password"              | **as expected**    | **Pass**   | [[TC-01-03.png]]                                                     |     |
+| TC-01-04 | REQ-01 | Login fails, display error message: "Please enter email and password" | **as expected**    | **Pass**   | [[TC-01-04 (1).png]]<br>[[TC-01-04 (2).png]]<br>[[TC-01-04 (3).png]] |     |
+| TC-02-01 | REQ-02 | Display all 20 books with their relevant info                         | **as expected**    | **Pass**   | [[TC-02-01 (1).png]]<br>[[TC-02-01 (2).png]]                         |     |
+| TC-02-02 | REQ-02 | (same as above)                                                       | **as expected**    | **Pass**   | [[TC-02-02 (1).png]]<br>[[TC-02-02 (2).png]]                         |     |
+| TC-02-03 | REQ-02 | The book's status changes from "Available" to "Borrowed"              | **as expected**    | **Pass**   | [[TC-02-03.png]]                                                     |     |
+| TC-03-01 | REQ-03 | Display books containing "Lập trình"                                  | **as expected**    | **Pass**   | [[TC-03-01.png]]                                                     |     |
+| TC-03-02 | REQ-03 | Display books of author "Vũ Thị Mai"                                  | **as expected**    | **Pass**   | [[TC-03-02.png]]                                                     |     |
+| TC-03-03 | REQ-03 | Display books of "Công nghệ" category                                 | Display empty list | **Fail**   | [[TC-03-03.png]]                                                     |     |
+| TC-03-04 | REQ-03 | (same as above)                                                       | **as expected**    | **Pass**   | [[TC-03-04.png]]                                                     |     |
+|          |        |                                                                       |                    |            |                                                                      |     |
 
 ---
+# Summary
 
-# Tổng hợp kết quả
+| TC type                    | Amount         |
+| -------------------------- | -------------- |
+| Total amount of test cases | 11             |
+| Pass                       | 10             |
+| Fail                       | 1              |
+| Blocked                    | 0              |
+| Not Run                    | 0              |
+| **Pass rate**              | 10/11 \| 90.9% |
 
-| Chỉ số            | Giá trị |
-| ----------------- | ------- |
-| Tổng số test case | 7       |
-| Pass              | 7       |
-| Fail              | 0       |
-| Blocked           | 0       |
-| Not Run           | 0       |
-| **Tỷ lệ Pass**    | 100%    |
+## Results by each REQ
 
-## Kết quả theo nhóm chức năng
-
-| Nhóm   | Tổng TC | Pass | Fail | Tỷ lệ Pass |
-| ------ | ------- | ---- | ---- | ---------- |
-| REQ-01 | 4       | 4    | 0    | 100%       |
-| REQ-02 | 3       | 3    | 0    | 100%       |
-| REQ-03 |         |      |      |            |
-| REQ-04 |         |      |      |            |
-| REQ-05 |         |      |      |            |
-| REQ-06 |         |      |      |            |
-| REQ-07 |         |      |      |            |
-| REQ-08 |         |      |      |            |
+| REQ    | Amount of TCs | Pass | Fail | Pass rate |
+| ------ | ------------- | ---- | ---- | --------- |
+| REQ-01 | 4             | 4    | 0    | 100%      |
+| REQ-02 | 3             | 3    | 0    | 100%      |
+| REQ-03 | 4             | 3    | 1    | 75%       |
+| REQ-04 |               |      |      |           |
+| REQ-05 |               |      |      |           |
+| REQ-06 |               |      |      |           |
+| REQ-07 |               |      |      |           |
+| REQ-08 |               |      |      |           |

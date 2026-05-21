@@ -116,12 +116,12 @@ Hệ thống quản lý mượn sách cho một thư viện nhỏ. Hai vai trò 
 
 ### REQ-03: Tìm kiếm và lọc sách / Search & Filter Books
 
-| Mục | Nội dung |
-|-----|---------|
-| **Tìm kiếm** | Theo tên sách hoặc tác giả |
-| **Lọc** | Theo thể loại |
-| **Quy tắc** | Tìm kiếm **KHÔNG phân biệt chữ hoa/thường** (case-insensitive) |
-| **Không có kết quả** | Hiển thị thông báo "Không tìm thấy sách" |
+| Mục                  | Nội dung                                                       |
+| -------------------- | -------------------------------------------------------------- |
+| **Tìm kiếm**         | Theo tên sách hoặc tác giả                                     |
+| **Lọc**              | Theo thể loại                                                  |
+| **Quy tắc**          | Tìm kiếm **KHÔNG phân biệt chữ hoa/thường** (case-insensitive) |
+| **Không có kết quả** | Hiển thị thông báo "Không tìm thấy sách"                       |
 
 ### REQ-04: Mượn sách / Borrow Book
 
@@ -208,13 +208,13 @@ Hệ thống quản lý mượn sách cho một thư viện nhỏ. Hai vai trò 
 
 ### 3.3. Phiếu mượn ban đầu / Initial Borrow Records
 
-| Mã phiếu | Thành viên | Sách | Ngày mượn | Ngày hết hạn | Trạng thái |
-|-----------|-----------|------|-----------|-------------|-----------|
-| BR001 | MEM002 (ba.nguyen) | BOOK003 (Kiểm thử phần mềm nhập môn) | 01/09/2024 | 15/09/2024 | Đang mượn (quá hạn thực tế, cần Thủ thư nhấn "Kiểm tra quá hạn" để cập nhật) |
-| BR002 | MEM003 (dam.tran) | BOOK001 (Lập trình Flutter cơ bản) | 10/08/2024 | 24/08/2024 | Đã trả (20/08/2024) |
-| BR003 | MEM006 (biet.hoang) | BOOK013 (Quản trị nhân sự hiện đại) | 01/10/2024 | 15/10/2024 | Đang mượn |
-| BR004 | MEM002 (ba.nguyen) | BOOK005 (Trí tuệ nhân tạo đại cương) | 01/07/2024 | 15/07/2024 | Đã trả (10/07/2024) |
-| BR005 | MEM003 (dam.tran) | BOOK006 (Kỹ năng giao tiếp) | 01/06/2024 | 15/06/2024 | Đã trả (20/06/2024 — trễ hạn) |
+| Mã phiếu | Thành viên          | Sách                                 | Ngày mượn  | Ngày hết hạn | Trạng thái                                                                   |
+| -------- | ------------------- | ------------------------------------ | ---------- | ------------ | ---------------------------------------------------------------------------- |
+| BR001    | MEM002 (ba.nguyen)  | BOOK003 (Kiểm thử phần mềm nhập môn) | 01/09/2024 | 15/09/2024   | Đang mượn (quá hạn thực tế, cần Thủ thư nhấn "Kiểm tra quá hạn" để cập nhật) |
+| BR002    | MEM003 (dam.tran)   | BOOK001 (Lập trình Flutter cơ bản)   | 10/08/2024 | 24/08/2024   | Đã trả (20/08/2024)                                                          |
+| BR003    | MEM006 (biet.hoang) | BOOK013 (Quản trị nhân sự hiện đại)  | 01/10/2024 | 15/10/2024   | Đang mượn                                                                    |
+| BR004    | MEM002 (ba.nguyen)  | BOOK005 (Trí tuệ nhân tạo đại cương) | 01/07/2024 | 15/07/2024   | Đã trả (10/07/2024)                                                          |
+| BR005    | MEM003 (dam.tran)   | BOOK006 (Kỹ năng giao tiếp)          | 01/06/2024 | 15/06/2024   | Đã trả (20/06/2024 — trễ hạn)                                                |
 
 ### 3.4. Tham số hệ thống / System Parameters
 

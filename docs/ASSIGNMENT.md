@@ -67,12 +67,12 @@ Tất cả expected result đều lấy từ **SRS**. Hãy đọc kỹ từng RE
 
 ### 3.2. Nâng cao (Bonus — cộng điểm)
 
-| # | Yêu cầu | Điểm cộng |
-|---|---------|-----------|
-| B1 | Viết **≥ 25 test case** phủ tất cả 8 REQ | +0.5 |
-| B2 | Thêm **bảng Decision Table** hoàn chỉnh cho chức năng Mượn sách | +0.5 |
-| B3 | Mỗi bug report có **ảnh chụp minh chứng** | +0.5 |
-| B4 | Tổng hợp có **đề xuất ưu tiên sửa lỗi** (High trước, Low sau) | +0.5 |
+| #   | Yêu cầu                                                         | Điểm cộng |
+| --- | --------------------------------------------------------------- | --------- |
+| B1  | Viết **≥ 25 test case** phủ tất cả 8 REQ                        | +0.5      |
+| B2  | Thêm **bảng Decision Table** hoàn chỉnh cho chức năng Mượn sách | +0.5      |
+| B3  | Mỗi bug report có **ảnh chụp minh chứng**                       | +0.5      |
+| B4  | Tổng hợp có **đề xuất ưu tiên sửa lỗi** (High trước, Low sau)   | +0.5      |
 
 > ⚠️ Điểm cộng tối đa: **+1.5 điểm** (trên thang 10).
 

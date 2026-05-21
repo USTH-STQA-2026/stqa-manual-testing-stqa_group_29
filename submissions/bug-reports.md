@@ -58,15 +58,15 @@
 
 # BUG-02
 
-| Thuộc tính | Chi tiết |
-|-----------|---------|
-| **Mã lỗi** | BUG-02 |
-| **TC liên quan** | `<!-- TC-xx -->` |
-| **REQ liên quan** | `<!-- REQ-xx -->` |
-| **Mức độ** | `<!-- High / Medium / Low -->` |
-| **Người phát hiện** | `<!-- Họ tên thành viên -->` |
-| **Ngày phát hiện** | `<!-- DD/MM/YYYY -->` |
-| **Trạng thái** | `<!-- Open / Closed -->` |
+| Thuộc tính          | Chi tiết                       |
+| ------------------- | ------------------------------ |
+| **Mã lỗi**          | BUG-02                         |
+| **TC liên quan**    | `<!-- TC-xx -->`               |
+| **REQ liên quan**   | `<!-- REQ-xx -->`              |
+| **Mức độ**          | `<!-- High / Medium / Low -->` |
+| **Người phát hiện** | `<!-- Họ tên thành viên -->`   |
+| **Ngày phát hiện**  | `<!-- DD/MM/YYYY -->`          |
+| **Trạng thái**      | `<!-- Open / Closed -->`       |
 
 **Tiêu đề:**
 `<!-- Mô tả hành vi lỗi -->`
