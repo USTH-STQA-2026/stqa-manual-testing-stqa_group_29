@@ -52,16 +52,16 @@
 
 ## IDM — Borrow Book (REQ-04, REQ-05)
 
-| Characteristic            | Block (Partition)  | Representative Value | Expected Result            |
-| ------------------------- | ------------------ | -------------------- | -------------------------- |
-| Book status?              | Available          | BOOK001              | Allow borrowing            |
-|                           | Borrowed           | BOOK003              | Not allowed                |
-|                           | Lost               | BOOK007              | Not allowed                |
-| Member status?            | Active             | MEM002               | Allow borrowing            |
-|                           | Suspended          | MEM004               | Reject, error message      |
-|                           | Expired            | MEM005               | Reject, error message      |
-| Number of books borrowed? | < 3 (BVA: 0, 1, 2) | MEM006 (0 books)     | Allow borrowing            |
-|                           | = 3 (BVA: limit)   | MEM with 3 books     | Reject, over-limit message |
+| Characteristic            | Block (Partition)       | Representative Value | Expected Result            |
+| ------------------------- | ----------------------- | -------------------- | -------------------------- |
+| Book status?              | Available [R1, R2]      | BOOK001              | Allow borrowing            |
+|                           | Borrowed [R5]           | BOOK003              | Not allowed                |
+|                           | Lost [R5]               | BOOK007              | Not allowed                |
+| Member status?            | Active [R1, R2]         | MEM002               | Allow borrowing            |
+|                           | Suspended [R3]          | MEM004               | Reject, error message      |
+|                           | Expired [R4]            | MEM005               | Reject, error message      |
+| Number of books borrowed? | < 3 (BVA: 0, 1, 2) [R1] | MEM006 (0 books)     | Allow borrowing            |
+|                           | = 3 (BVA: limit) [R2]   | MEM with 3 books     | Reject, over-limit message |
 
 ## IDM — Return Book (REQ-05)
 
