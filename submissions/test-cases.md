@@ -63,6 +63,18 @@
 | Number of books borrowed? | < 3 (BVA: 0, 1, 2) [R1] | MEM006 (0 books)     | Allow borrowing            |
 |                           | = 3 (BVA: limit) [R2]   | MEM with 3 books     | Reject, over-limit message |
 
+## Decision Table — Borrow Book (REQ-04)
+
+**Conditions:**  **C1**: Book status = "Available"? /**C2**: Member status = "Active"? / **C3**: Number of books borrowed < 3?
+
+| Rule | C1: Book "Available"?Y | C2: Member "Active"? | C3: Books < 3? | Result                                          |
+| ---- | ---------------------- | -------------------- | -------------- | ----------------------------------------------- |
+| R1   | Yes                    | Yes                  | Yes            | Borrow successful, create slip (dueDate +14)    |
+| R2   | Yes                    | Yes                  | No             | "Maximum borrow limit reached (3 books)"        |
+| R3   | Yes                    | No (Suspended)       | -              | "Member is currently suspended. Cannot borrow." |
+| R4   | Yes                    | No (Expired)         | -              | "Member has expired. Cannot borrow."            |
+| R5   | No (Borrowed / Lost)   | -                    | -              | "Book not available for borrowing"              |
+
 ## IDM — Return Book (REQ-05)
 
 | Characteristic        | Block (Partition)   | Representative Value | Expected Result                 |
