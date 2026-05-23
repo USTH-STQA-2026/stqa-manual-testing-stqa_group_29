@@ -10,3 +10,7 @@ desktop.ini
 *.swp
 *.swo
 .obsidian/**
+
+# Guides and examples
+docs/**
+examples/**
