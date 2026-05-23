@@ -11,100 +11,20 @@
 
 ---
 
-# BUG-01
-
-| Thuộc tính | Chi tiết |
-|-----------|---------|
-| **Mã lỗi** | BUG-01 |
-| **TC liên quan** | `<!-- TC-xx -->` |
-| **REQ liên quan** | `<!-- REQ-xx -->` |
-| **Mức độ** | `<!-- High / Medium / Low -->` |
-| **Người phát hiện** | `<!-- Họ tên thành viên -->` |
-| **Ngày phát hiện** | `<!-- DD/MM/YYYY -->` |
-| **Trạng thái** | `<!-- Open / Closed -->` |
-
-**Tiêu đề:**
-`<!-- Mô tả hành vi lỗi cụ thể -->`
-
-**Môi trường:**
-- Trình duyệt: Chrome `<!-- version -->`
-- Hệ điều hành: `<!-- OS -->`
-- Ngôn ngữ giao diện: Tiếng Việt
-
-**Điều kiện tiên quyết:**
-`<!-- VD: Trang đăng nhập đã mở, dữ liệu đã reset -->`
-
-**Bước tái hiện:**
-1. `<!-- Bước 1 -->`
-2. `<!-- Bước 2 -->`
-3. `<!-- Bước 3 -->`
-
-**Kết quả mong đợi:**
-`<!-- Kết quả đúng theo SRS -->`
-
-**Kết quả thực tế:**
-`<!-- Kết quả hệ thống thật sự trả về -->`
-
-**Tác động:**
-`<!-- VD: Vi phạm quy tắc nghiệp vụ cốt lõi, cho phép mượn vượt giới hạn -->`
-
-**Minh chứng:**
-`<!-- Đính kèm ảnh chụp màn hình nếu có -->`!
-
-**Đề xuất xử lý:**
-`<!-- Gợi ý cách sửa lỗi nếu có -->` 
-
----
-
-# BUG-02
-
-| Thuộc tính          | Chi tiết                       |
-| ------------------- | ------------------------------ |
-| **Mã lỗi**          | BUG-02                         |
-| **TC liên quan**    | `<!-- TC-xx -->`               |
-| **REQ liên quan**   | `<!-- REQ-xx -->`              |
-| **Mức độ**          | `<!-- High / Medium / Low -->` |
-| **Người phát hiện** | `<!-- Họ tên thành viên -->`   |
-| **Ngày phát hiện**  | `<!-- DD/MM/YYYY -->`          |
-| **Trạng thái**      | `<!-- Open / Closed -->`       |
-
-**Tiêu đề:**
-`<!-- Mô tả hành vi lỗi -->`
-
-**Bước tái hiện:**
-1. `<!-- -->`
-2. `<!-- -->`
-3. `<!-- -->`
-
-**Kết quả mong đợi:**
-`<!-- -->`
-
-**Kết quả thực tế:**
-`<!-- -->`
-
-**Tác động:**
-`<!-- -->`
-
-**Minh chứng:**
-`<!-- -->`
-
-**Đề xuất xử lý:**
-`<!-- -->`
-
 ---
 
 <!-- Copy template BUG trên để thêm BUG-03, BUG-04, ... cho mỗi TC Fail -->
-# BUG-03
+# BUG-01
 
-| Thuộc tính          | Chi tiết                     |
-| ------------------- | ---------------------------- |
-| **Mã lỗi**          | BUG-02                       |
-| **TC liên quan**    | `<!-- TC-xx -->`             |
-| **REQ liên quan**   | `<!-- REQ-03 -->`            |
-| **Mức độ**          | `<!-- Medium -->`            |
-| **Người phát hiện** | `<!-- Họ tên thành viên -->` |
-| **Ngày phát hiện**  | `<!-- DD/MM/YYYY -->`        |
-| **Trạng thái**      | `<!-- Open / Closed -->`     |
+| Thuộc tính          | Chi tiết              |
+| ------------------- | --------------------- |
+| **Mã lỗi**          | BUG-01                |
+| **TC liên quan**    | `<!-- TC-13-->`       |
+| **REQ liên quan**   | `<!-- REQ-03 -->`     |
+| **Mức độ**          | `<!-- Medium -->`     |
+| **Người phát hiện** | `<!-- Group 29 -->`   |
+| **Ngày phát hiện**  | `<!-- 22/05/2026 -->` |
+| **Trạng thái**      | `<!-- Open  -->`      |
 
 ## Title
 
@@ -176,17 +96,17 @@ Normalize both user input and stored category values into the same format (e.g.,
 
 -----
 
-# BUG-04
+# BUG-02
 
-| Thuộc tính          | Chi tiết                     |
-| ------------------- | ---------------------------- |
-| **Mã lỗi**          | BUG-01                       |
-| **TC liên quan**    | `<!-- TC-xx -->`             |
-| **REQ liên quan**   | `<!-- REQ-04-->`             |
-| **Mức độ**          | `<!-- High -->`              |
-| **Người phát hiện** | `<!-- Họ tên thành viên -->` |
-| **Ngày phát hiện**  | `<!-- DD/MM/YYYY -->`        |
-| **Trạng thái**      | `<!-- Open / Closed -->`     |
+| Thuộc tính          | Chi tiết             |
+| ------------------- | -------------------- |
+| **Mã lỗi**          | BUG-02               |
+| **TC liên quan**    | `<!-- TC-23 -->`     |
+| **REQ liên quan**   | `<!-- REQ-04-->`     |
+| **Mức độ**          | `<!-- High -->`      |
+| **Người phát hiện** | `<!-- Group 29 -->`  |
+| **Ngày phát hiện**  | `<!--22/05/2026 -->` |
+| **Trạng thái**      | `<!-- Open -->`      |
 
 
 
@@ -270,17 +190,17 @@ borrowCount >= 3
 
 
 ----
-# BUG-05
+# BUG-03
 
-| Thuộc tính          | Chi tiết                     |
-| ------------------- | ---------------------------- |
-| **Mã lỗi**          | BUG-01                       |
-| **TC liên quan**    | `<!-- TC-xx -->`             |
-| **REQ liên quan**   | `<!-- REQ-04 -->`            |
-| **Mức độ**          | `<!-- Medium -->`            |
-| **Người phát hiện** | `<!-- Họ tên thành viên -->` |
-| **Ngày phát hiện**  | `<!-- DD/MM/YYYY -->`        |
-| **Trạng thái**      | `<!-- Open / Closed -->`     |
+| Thuộc tính          | Chi tiết              |
+| ------------------- | --------------------- |
+| **Mã lỗi**          | BUG-03                |
+| **TC liên quan**    | `<!-- TC-20-->`       |
+| **REQ liên quan**   | `<!-- REQ-04 -->`     |
+| **Mức độ**          | `<!-- Medium -->`     |
+| **Người phát hiện** | `<!-- Group 29 -->`   |
+| **Ngày phát hiện**  | `<!-- 22/05/2026 -->` |
+| **Trạng thái**      | `<!-- Open -->`       |
 
 ## Title
 
@@ -354,17 +274,17 @@ The system provides incorrect rejection information to users, potentially causin
 Review the validation and error-handling logic for member status checking to ensure suspended and expired states are handled separately with correct corresponding messages.
 
 ---
-# BUG-06
+# BUG-04
 
 | Thuộc tính          | Chi tiết                     |
 | ------------------- | ---------------------------- |
-| **Mã lỗi**          | BUG-01                       |
-| **TC liên quan**    | `<!-- TC-xx -->`             |
-| **REQ liên quan**   | `<!-- REQ-08 and REQ-05 -->` |
+| **Mã lỗi**          | BUG-04                       |
+| **TC liên quan**    | `<!-- TC-28 and TC-42 -->`   |
+| **REQ liên quan**   | `<!-- REQ-05 and REQ-08 -->` |
 | **Mức độ**          | `<!-- High -->`              |
-| **Người phát hiện** | `<!-- Họ tên thành viên -->` |
-| **Ngày phát hiện**  | `<!-- DD/MM/YYYY -->`        |
-| **Trạng thái**      | `<!-- Open / Closed -->`     |
+| **Người phát hiện** | `<!-- Group 29 -->`          |
+| **Ngày phát hiện**  | `<!-- 22/05/2026 -->`        |
+| **Trạng thái**      | `<!-- Open  -->`             |
 
 ## Title
 
@@ -440,17 +360,17 @@ This issue violates access control and authorization rules defined in REQ-05 and
 Implement proper authorization checks before displaying borrow records and processing return actions. The system should verify that the logged-in member is the actual borrower of the selected book before allowing access or return operations.
 
 ----
-# BUG-07
+# BUG-05
 
-| Thuộc tính          | Chi tiết                     |
-| ------------------- | ---------------------------- |
-| **Mã lỗi**          | BUG-01                       |
-| **TC liên quan**    | `<!-- TC-xx -->`             |
-| **REQ liên quan**   | `<!-- req05-->`              |
-| **Mức độ**          | `<!--  Medium -->`           |
-| **Người phát hiện** | `<!-- Họ tên thành viên -->` |
-| **Ngày phát hiện**  | `<!-- DD/MM/YYYY -->`        |
-| **Trạng thái**      | `<!-- Open / Closed -->`     |
+| Thuộc tính          | Chi tiết              |
+| ------------------- | --------------------- |
+| **Mã lỗi**          | BUG-05                |
+| **TC liên quan**    | `<!-- TC-26 -->`      |
+| **REQ liên quan**   | `<!-- req05-->`       |
+| **Mức độ**          | `<!--  Medium -->`    |
+| **Người phát hiện** | `<!-- Group 29-->`    |
+| **Ngày phát hiện**  | `<!-- 22/05/2026 -->` |
+| **Trạng thái**      | `<!-- Open  -->`      |
 
 
 ## Title
@@ -527,17 +447,17 @@ returnDate > dueDate
 the system should automatically display an overdue warning message before or after completing the return operation.
 
 ----
-# BUG-08
+# BUG-06
 
-| Thuộc tính          | Chi tiết                     |
-| ------------------- | ---------------------------- |
-| **Mã lỗi**          | BUG-01                       |
-| **TC liên quan**    | `<!-- TC-xx -->`             |
-| **REQ liên quan**   | `<!-- REQ-06-->`             |
-| **Mức độ**          | `<!-- Medium -->`            |
-| **Người phát hiện** | `<!-- Họ tên thành viên -->` |
-| **Ngày phát hiện**  | `<!-- DD/MM/YYYY -->`        |
-| **Trạng thái**      | `<!-- Open / Closed -->`     |
+| Thuộc tính          | Chi tiết             |
+| ------------------- | -------------------- |
+| **Mã lỗi**          | BUG-06               |
+| **TC liên quan**    | `<!-- TC-43 -->`     |
+| **REQ liên quan**   | `<!-- REQ-06-->`     |
+| **Mức độ**          | `<!-- Medium -->`    |
+| **Người phát hiện** | `<!-- Group 29 -->`  |
+| **Ngày phát hiện**  | `<!--22/05/2026 -->` |
+| **Trạng thái**      | `<!-- Open  -->`     |
 
 ## Title
 
@@ -611,17 +531,17 @@ returnDate > dueDate
 the system should display a visible overdue or late-return indicator in the borrow history.
 
 ----
-# BUG-09
+# BUG-07
 
-| Thuộc tính          | Chi tiết                     |
-| ------------------- | ---------------------------- |
-| **Mã lỗi**          | BUG-01                       |
-| **TC liên quan**    | `<!-- TC-xx -->`             |
-| **REQ liên quan**   | `<!-- REQ-06-->`             |
-| **Mức độ**          | `<!--  Medium -->`           |
-| **Người phát hiện** | `<!-- Họ tên thành viên -->` |
-| **Ngày phát hiện**  | `<!-- DD/MM/YYYY -->`        |
-| **Trạng thái**      | `<!-- Open / Closed -->`     |
+| Thuộc tính          | Chi tiết                    |
+| ------------------- | --------------------------- |
+| **Mã lỗi**          | BUG-07                      |
+| **TC liên quan**    | `<!-- TC-29,TC-31,TC-43-->` |
+| **REQ liên quan**   | `<!-- REQ-06-->`            |
+| **Mức độ**          | `<!--  Medium -->`          |
+| **Người phát hiện** | `<!-- Group 29 -->`         |
+| **Ngày phát hiện**  | `<!-- 22/05/2026 -->`       |
+| **Trạng thái**      | `<!-- Open  -->`            |
 
 
 ## Title
@@ -703,103 +623,18 @@ Synchronize overdue status visibility across user roles.
 After overdue processing, the system should consistently update and display overdue status for both Librarians and the corresponding Members.
 
 -----
-# BUG-10
 
-| Thuộc tính          | Chi tiết                     |
-| ------------------- | ---------------------------- |
-| **Mã lỗi**          | BUG-01                       |
-| **TC liên quan**    | `<!-- TC-xx -->`             |
-| **REQ liên quan**   | `<!-- REQ-05-->`             |
-| **Mức độ**          | `<!-- Medium  -->`           |
-| **Người phát hiện** | `<!-- Họ tên thành viên -->` |
-| **Ngày phát hiện**  | `<!-- DD/MM/YYYY -->`        |
-| **Trạng thái**      | `<!-- Open / Closed -->`     |
+# BUG-08
 
-
-## Title
-
-System does not display overdue warning when returning overdue books
-
-## Environment
-
-- Browser: Chrome 148
-    
-- Operating System: Windows 11
-    
-- Application: ABC Library System v1.0
-    
-- URL: [https://stqa.rbc.vn](https://stqa.rbc.vn/)
-    
-
-## Preconditions
-
-- Login using member account:  
-    `ba.nguyen@email.com` (MEM002)
-    
-- The member has an overdue borrowed book.
-    
-- Current date is later than the book due date.
-    
-
-## Steps to Reproduce
-
-1. Login using account `ba.nguyen@email.com`.
-    
-2. Open the “Borrow / Return” tab.
-    
-3. Return an overdue borrowed book.
-    
-4. Observe the displayed notification message.
-    
-
-## Expected Result
-
-According to REQ-05:  
-If a book is returned after the due date, the system must display an overdue warning or notification informing the user that the return is overdue.
-
-## Actual Result
-
-The system only displays the success message:
-
-```text
-Đã trả sách thành công
-```
-
-No overdue warning or overdue-related notification is displayed even though the returned book is overdue.
-
-## Impact
-
-Users and librarians may not be aware that the returned book was overdue. This can reduce the accuracy of overdue tracking and violate the overdue handling requirement defined in REQ-05.
-
-## Severity
-
-**Medium**
-
-## Evidence
-
-- ![[Screenshot bug07.png]]
-    
-
-## Suggested Fix
-
-Add overdue validation during the return process.  
-If:  
-returnDate > dueDate
-
-the system should display an overdue warning message together with or before the successful return notification.
-
------
-# BUG-11
-
-| Thuộc tính          | Chi tiết                     |
-| ------------------- | ---------------------------- |
-| **Mã lỗi**          | BUG-01                       |
-| **TC liên quan**    | `<!-- TC-xx -->`             |
-| **REQ liên quan**   | `<!-- REQ-07-->`             |
-| **Mức độ**          | `<!--  Medium  -->`          |
-| **Người phát hiện** | `<!-- Họ tên thành viên -->` |
-| **Ngày phát hiện**  | `<!-- DD/MM/YYYY -->`        |
-| **Trạng thái**      | `<!-- Open / Closed -->`     |
+| Thuộc tính          | Chi tiết               |
+| ------------------- | ---------------------- |
+| **Mã lỗi**          | BUG-08                 |
+| **TC liên quan**    | `<!-- TC-33,TC-34 -->` |
+| **REQ liên quan**   | `<!-- REQ-07-->`       |
+| **Mức độ**          | `<!--  Medium  -->`    |
+| **Người phát hiện** | `<!-- Group 29 -->`    |
+| **Ngày phát hiện**  | `<!-- 22/05/2026 -->`  |
+| **Trạng thái**      | `<!-- Open  -->`       |
 
 
 ## Title
@@ -886,17 +721,17 @@ Review the email validation logic to ensure valid email formats containing both:
 are accepted correctly.
 
 ----
-# BUG-12
+# BUG-09
 
-| Thuộc tính          | Chi tiết                     |
-| ------------------- | ---------------------------- |
-| **Mã lỗi**          | BUG-01                       |
-| **TC liên quan**    | `<!-- TC-xx -->`             |
-| **REQ liên quan**   | `<!-- REQ-07-->`             |
-| **Mức độ**          | `<!-- Medium -->`            |
-| **Người phát hiện** | `<!-- Họ tên thành viên -->` |
-| **Ngày phát hiện**  | `<!-- DD/MM/YYYY -->`        |
-| **Trạng thái**      | `<!-- Open / Closed -->`     |
+| Thuộc tính          | Chi tiết               |
+| ------------------- | ---------------------- |
+| **Mã lỗi**          | BUG-0                  |
+| **TC liên quan**    | `<!-- TC-34,TC-35 -->` |
+| **REQ liên quan**   | `<!-- REQ-07-->`       |
+| **Mức độ**          | `<!-- Medium -->`      |
+| **Người phát hiện** | `<!-- Group 29 -->`    |
+| **Ngày phát hiện**  | `<!-- 22/05/2026 -->`  |
+| **Trạng thái**      | `<!-- Open  -->`       |
 
 
 ## Title
