@@ -83,10 +83,10 @@ Users may fail to find books when entering uppercase or differently formatted ca
 
 ## Evidence
 
-- Screenshot 1:  ![[Screenshot bug03.png]]
+- Screenshot 1:  ![[Screenshot bug01-1.png]]
     Input `Công nghệ` → books are displayed correctly.
     
-- Screenshot 2:  ![[Screenshot bug03-1.png]]
+- Screenshot 2:  ![[Screenshot bug01-2.png]]
     Input `CÔNG NGHỆ` → no books found.
     
 
@@ -169,8 +169,8 @@ This issue violates the business rule defined in REQ-04 and allows members to ex
 
 ## Evidence
 
-- ![[Screenshot bug04-1.png]]
-    ![[Screenshot bug04.png]]
+- ![[Screenshot bug02-1.png]]
+    ![[Screenshot bug02-2.png]]
 - 
 
 ## Suggested Fix
@@ -266,7 +266,7 @@ The system provides incorrect rejection information to users, potentially causin
 
 ## Evidence
 
-- ![[Screenshot bug05.png]]
+- ![[Screenshot bug03.png]]
     
 
 ## Suggested Fix
@@ -350,10 +350,10 @@ This issue violates access control and authorization rules defined in REQ-05 and
 
 ## Evidence
 
-- ![[Screenshot bug06-1.png]]
+- ![[Screenshot bug04-1.png]]
     
 -
-    ![[Screenshot bug06.png]]
+    ![[Screenshot bug04-2.png]]
 
 ## Suggested Fix
 
@@ -433,7 +433,7 @@ Users and librarians may not realize that a returned book was overdue. This may 
 
 ## Evidence
 
-- ![[Screenshot bug07.png]]
+- ![[Screenshot bug05.png]]
     
 - 
     
@@ -520,7 +520,7 @@ Users and librarians cannot identify whether a returned book was overdue, reduci
 
 ## Evidence
 
--![[Screenshot bug08.png]]
+-![[Screenshot bug06.png]]
 
 ## Suggested Fix
 
@@ -614,9 +614,9 @@ Members may not be aware that their borrowed books are overdue, causing inconsis
 
 ## Evidence
 
-- ![[Screenshot bug09.png]]
+- ![[Screenshot bug07-1.png]]
     
-![[Screenshot bug09-01.png]]
+![[Screenshot bug07-2.png]]
 ## Suggested Fix
 
 Synchronize overdue status visibility across user roles.  
@@ -706,7 +706,7 @@ Valid users cannot be added into the system, causing incorrect validation behavi
 
 ## Evidence
 
-- ![[Screenshot bug11.png]]
+- ![[Screenshot bug08.png]]
     
 
 ## Suggested Fix
@@ -799,9 +799,9 @@ Invalid member data can be stored in the system, reducing data quality and poten
 
 ## Evidence
 
-![[Screenshot bug12.png]]
+![[Screenshot bug09-1.png]]
 
-![[Screenshot bug12-1.png]]
+![[Screenshot bug09-2.png]]
 ## Suggested Fix
 
 Improve email format validation to ensure:
