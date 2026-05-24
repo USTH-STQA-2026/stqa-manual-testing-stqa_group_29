@@ -178,7 +178,7 @@ Review the validation and error-handling logic for member status checking to ens
 | **Mã lỗi**          | BUG-04            |
 | **TC liên quan**    | TC-28 and TC-42   |
 | **REQ liên quan**   | REQ-05 and REQ-08 |
-| **Mức độ**          | High              |
+| **Mức độ**          | Critical          |
 | **Người phát hiện** | Group 29          |
 | **Ngày phát hiện**  | 22/05/2026        |
 | **Trạng thái**      | Open              |
@@ -220,13 +220,13 @@ Implement proper authorization checks before displaying borrow records and proce
 ----
 # BUG-05
 
-| Thuộc tính          | Chi tiết              |
-| ------------------- | --------------------- |
-| **Mã lỗi**          | BUG-05                |
+| Thuộc tính          | Chi tiết   |
+| ------------------- | ---------- |
+| **Mã lỗi**          | BUG-05     |
 | **TC liên quan**    | TC-26      |
-| **REQ liên quan**   | req05       |
-| **Mức độ**          |  Medium    |
-| **Người phát hiện** | Group 29    |
+| **REQ liên quan**   | REG-05     |
+| **Mức độ**          | Medium     |
+| **Người phát hiện** | Group 29   |
 | **Ngày phát hiện**  | 22/05/2026 |
 | **Trạng thái**      | Open       |
 ## Title
@@ -431,7 +431,7 @@ are accepted correctly.
 
 | Thuộc tính          | Chi tiết    |
 | ------------------- | ----------- |
-| **Mã lỗi**          | BUG-0       |
+| **Mã lỗi**          | BUG-09      |
 | **TC liên quan**    | TC-34,TC-35 |
 | **REQ liên quan**   | REQ-07      |
 | **Mức độ**          | Medium      |
