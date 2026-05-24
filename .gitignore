@@ -9,7 +9,7 @@ desktop.ini
 .idea/
 *.swp
 *.swo
-.obsidian/**
+**/.obsidian/**
 
 # Guides and examples
 docs/**
