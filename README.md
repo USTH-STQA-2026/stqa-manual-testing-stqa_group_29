@@ -14,11 +14,11 @@ Hệ thống cần kiểm thử: **Quản lý mượn sách Thư viện ABC** �
 
 > **⚠️ Sinh viên: Điền thông tin nhóm vào bảng dưới đây trước khi nộp bài.**
 
-| | Thông tin |
-|---|---|
-| **Tên nhóm** | Nhóm 29 |
-| **Lớp** | 252ICT2012.L1 |
-| **Học kỳ** | HK2 2025-2026 |
+|              | Thông tin     |
+| ------------ | ------------- |
+| **Tên nhóm** | Nhóm 29       |
+| **Lớp**      | 252ICT2012.L1 |
+| **Học kỳ**   | HK2 2025-2026 |
 
 | # | MSSV | Họ và tên | Vai trò |
 |---|------|-----------|---------|
