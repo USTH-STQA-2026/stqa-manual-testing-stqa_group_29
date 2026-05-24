@@ -107,10 +107,10 @@ The system is not yet ready to be deployed, as there are still too many bugs aff
 
 ---
 
-# 8. Khai báo sử dụng AI (Tùy chọn)
-
+# 8.AI Usage Declaration (Optional)
+	
 > Nếu nhóm có sử dụng công cụ AI (ChatGPT, Copilot, Gemini...), hãy ghi rõ bên dưới. Khai báo trung thực **không ảnh hưởng điểm** — đây là kỹ năng minh bạch trong nghề.
 
-| Công cụ AI | Dùng cho phần nào | Bạn đã kiểm tra/chỉnh sửa thế nào |
-| ---------- | ----------------- | --------------------------------- |
-|            |                   |                                   |
+| AI Tool | Purpose / Section | Review & Verification Process                                                                                                                                                                        |
+| ------- | ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Gemini  | Test Execution    | Cross-check the test execution results against the SRS document. Verified that all test cases align with the functional requirements and manually corrected any discrepancies in the execution logs. |
