@@ -1,4 +1,4 @@
-# Test Cases — Test Case Specification
+# Test Cases
 
 | Information      |                     |
 | ---------------- | ------------------- |
@@ -65,7 +65,7 @@
 
 ## Decision Table — Borrow Book (REQ-04)
 
-**Conditions:**  **C1**: Book status = "Available"? /**C2**: Member status = "Active"? / **C3**: Number of books borrowed < 3?
+**Conditions:**  **C1**: Book status = "Available"? / **C2**: Member status = "Active"? / **C3**: Number of books borrowed < 3?
 
 | Rule | C1: Book "Available"?Y | C2: Member "Active"? | C3: Books < 3? | Result                                          |
 | ---- | ---------------------- | -------------------- | -------------- | ----------------------------------------------- |

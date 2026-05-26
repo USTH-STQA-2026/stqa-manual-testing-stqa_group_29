@@ -1,27 +1,27 @@
-# Bug Reports — Báo cáo lỗi
+# Bug Reports
 
 > **Hướng dẫn**: Tạo 1 mục bug cho mỗi TC có kết quả **Fail**.
 > Xem [examples/sample-bug-report.md](../examples/sample-bug-report.md) để hiểu cách viết bug report tốt.
 > Mỗi bug cần: tiêu đề mô tả hành vi lỗi, bước tái hiện, expected vs actual, severity + giải thích.
 
-| Thông tin | |
-|---|---|
-| **Nhóm** | Tên nhóm |
-| **Ngày báo cáo** | DD/MM/YYYY |
+| Information     |                          |
+| --------------- | ------------------------ |
+| **Group**       | Group 29                 |
+| **Report Date** | From 16/05 to 13/06/2026 |
 
 
 ---
 # BUG-01
 
-| Thuộc tính          | Chi tiết              |
-| ------------------- | --------------------- |
-| **Mã lỗi**          | BUG-01                |
-| **TC liên quan**    | TC-13       |
-| **REQ liên quan**   | REQ-03     |
-| **Mức độ**          | Medium     |
-| **Người phát hiện** | Group 29   |
-| **Ngày phát hiện**  | 22/05/2026 |
-| **Trạng thái**      | Open       |
+| Atrribute             | Details    |
+| --------------------- | ---------- |
+| **Bug ID**            | BUG-01     |
+| **Relevant TC**       | TC-13      |
+| **Relevant REQ**      | REQ-03     |
+| **Severity**          | Medium        |
+| **Tester**            | Group 29   |
+| **Date of discovery** | 22/05/2026 |
+| **State**             | Open       |
 
 ## Title
 
@@ -63,18 +63,17 @@ Users may fail to find books when entering uppercase or differently formatted ca
 Normalize both user input and stored category values into the same format (e.g., convert all strings to lowercase before comparison) to ensure case-insensitive search behavior as required by the SRS. 
 
 -----
-
 # BUG-02
 
-| Thuộc tính          | Chi tiết             |
+| Atrribute          | Details             |
 | ------------------- | -------------------- |
-| **Mã lỗi**          | BUG-02               |
-| **TC liên quan**    | TC-23     |
-| **REQ liên quan**   | REQ-04     |
-| **Mức độ**          | High      |
-| **Người phát hiện** | Group 29  |
-| **Ngày phát hiện**  | 22/05/2026 |
-| **Trạng thái**      | Open      |
+| **Bug ID**          | BUG-02               |
+| **Relevant TC**    | TC-23     |
+| **Relevant REQ**   | REQ-04     |
+| **Severity**          | High      |
+| **Tester** | Group 29  |
+| **Date of discovery**  | 22/05/2026 |
+| **State**      | Open      |
 ## Title
 System allows member to borrow a 4th book even though the maximum limit is 3 books
 ## Environment
@@ -121,15 +120,15 @@ borrowCount >= 3
 ----
 # BUG-03
 
-| Thuộc tính          | Chi tiết              |
+| Atrribute          | Details              |
 | ------------------- | --------------------- |
-| **Mã lỗi**          | BUG-03                |
-| **TC liên quan**    | TC-20       |
-| **REQ liên quan**   | REQ-04     |
-| **Mức độ**          | Medium     |
-| **Người phát hiện** | Group 29   |
-| **Ngày phát hiện**  | 22/05/2026 |
-| **Trạng thái**      | Open       |
+| **Bug ID**          | BUG-03                |
+| **Relevant TC**    | TC-20       |
+| **Relevant REQ**   | REQ-04     |
+| **Severity**          | Medium     |
+| **Tester** | Group 29   |
+| **Date of discovery**  | 22/05/2026 |
+| **State**      | Open       |
 ## Title
 Suspended member receives incorrect “expired member” error message when borrowing books
 ## Environment
@@ -173,15 +172,15 @@ Review the validation and error-handling logic for member status checking to ens
 ---
 # BUG-04
 
-| Thuộc tính          | Chi tiết          |
+| Atrribute          | Details          |
 | ------------------- | ----------------- |
-| **Mã lỗi**          | BUG-04            |
-| **TC liên quan**    | TC-28 and TC-42   |
-| **REQ liên quan**   | REQ-05 and REQ-08 |
-| **Mức độ**          | Critical          |
-| **Người phát hiện** | Group 29          |
-| **Ngày phát hiện**  | 22/05/2026        |
-| **Trạng thái**      | Open              |
+| **Bug ID**          | BUG-04            |
+| **Relevant TC**    | TC-28 and TC-42   |
+| **Relevant REQ**   | REQ-05 and REQ-08 |
+| **Severity**          | Critical          |
+| **Tester** | Group 29          |
+| **Date of discovery**  | 22/05/2026        |
+| **State**      | Open              |
 ## Title
 Member can view and return books borrowed by another member
 ## Environment
@@ -220,15 +219,15 @@ Implement proper authorization checks before displaying borrow records and proce
 ----
 # BUG-05
 
-| Thuộc tính          | Chi tiết   |
+| Atrribute          | Details   |
 | ------------------- | ---------- |
-| **Mã lỗi**          | BUG-05     |
-| **TC liên quan**    | TC-26      |
-| **REQ liên quan**   | REG-05     |
-| **Mức độ**          | Medium     |
-| **Người phát hiện** | Group 29   |
-| **Ngày phát hiện**  | 22/05/2026 |
-| **Trạng thái**      | Open       |
+| **Bug ID**          | BUG-05     |
+| **Relevant TC**    | TC-26      |
+| **Relevant REQ**   | REQ-05     |
+| **Severity**          | Medium     |
+| **Tester** | Group 29   |
+| **Date of discovery**  | 22/05/2026 |
+| **State**      | Open       |
 ## Title
 System does not display overdue warning when returning overdue books
 ## Environment
@@ -270,15 +269,15 @@ the system should automatically display an overdue warning message before or aft
 ----
 # BUG-06
 
-| Thuộc tính          | Chi tiết        |
+| Atrribute          | Details        |
 | ------------------- | --------------- |
-| **Mã lỗi**          | BUG-06          |
-| **TC liên quan**    | TC-43           |
-| **REQ liên quan**   | REQ-06          |
-| **Mức độ**          | Medium          |
-| **Người phát hiện** | Group 29        |
-| **Ngày phát hiện**  | 22/05/2026 |
-| **Trạng thái**      | Open            |
+| **Bug ID**          | BUG-06          |
+| **Relevant TC**    | TC-43           |
+| **Relevant REQ**   | REQ-06          |
+| **Severity**          | Medium          |
+| **Tester** | Group 29        |
+| **Date of discovery**  | 22/05/2026 |
+| **State**      | Open            |
 ## Title
 System does not display overdue indication for books returned after the due date
 ## Environment
@@ -319,15 +318,15 @@ the system should display a visible overdue or late-return indicator in the borr
 ----
 # BUG-07
 
-| Thuộc tính          | Chi tiết              |
+| Atrribute          | Details              |
 | ------------------- | --------------------- |
-| **Mã lỗi**          | BUG-07                |
-| **TC liên quan**    | TC-29,TC-31,TC-43 |
-| **REQ liên quan**   | REQ-06            |
-| **Mức độ**          | Medium                |
-| **Người phát hiện** | Group 29              |
-| **Ngày phát hiện**  | 22/05/2026            |
-| **Trạng thái**      | Open                  |
+| **Bug ID**          | BUG-07                |
+| **Relevant TC**    | TC-29,TC-31,TC-43 |
+| **Relevant REQ**   | REQ-06            |
+| **Severity**          | Medium                |
+| **Tester** | Group 29              |
+| **Date of discovery**  | 22/05/2026            |
+| **State**      | Open                  |
 ## Title
 Overdue borrow records are not displayed to the corresponding member after overdue checking
 ## Environment
@@ -374,15 +373,15 @@ After overdue processing, the system should consistently update and display over
 
 # BUG-08
 
-| Thuộc tính          | Chi tiết    |
+| Atrribute          | Details    |
 | ------------------- | ----------- |
-| **Mã lỗi**          | BUG-08      |
-| **TC liên quan**    | TC-33,TC-34 |
-| **REQ liên quan**   | REQ-07      |
-| **Mức độ**          | Medium      |
-| **Người phát hiện** | Group 29    |
-| **Ngày phát hiện**  | 22/05/2026  |
-| **Trạng thái**      | Open        |
+| **Bug ID**          | BUG-08      |
+| **Relevant TC**    | TC-33,TC-34 |
+| **Relevant REQ**   | REQ-07      |
+| **Severity**          | Medium      |
+| **Tester** | Group 29    |
+| **Date of discovery**  | 22/05/2026  |
+| **State**      | Open        |
 ## Title
 System rejects valid email format when adding a new member
 ## Environment
@@ -429,15 +428,15 @@ are accepted correctly.
 ----
 # BUG-09
 
-| Thuộc tính          | Chi tiết    |
-| ------------------- | ----------- |
-| **Mã lỗi**          | BUG-09      |
-| **TC liên quan**    | TC-34,TC-35 |
-| **REQ liên quan**   | REQ-07      |
-| **Mức độ**          | Medium      |
-| **Người phát hiện** | Group 29    |
-| **Ngày phát hiện**  | 22/05/2026  |
-| **Trạng thái**      | Open        |
+| Atrribute             | Details     |
+| --------------------- | ----------- |
+| **Bug ID**            | BUG-09      |
+| **Relevant TC**       | TC-34,TC-35 |
+| **Relevant REQ**      | REQ-07      |
+| **Severity**          | Medium         |
+| **Tester**            | Group 29    |
+| **Date of discovery** | 22/05/2026  |
+| **State**             | Open        |
 ## Title
 System accepts invalid email formats when adding new member
 ## Environment
