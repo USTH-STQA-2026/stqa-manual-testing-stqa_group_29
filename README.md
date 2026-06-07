@@ -1,3 +1,4 @@
+[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/WBjeZ6BC)
 # STQA Library Manual Testing — Starter Template
 
 Bài tập thực hành **Kiểm thử thủ công (Manual Testing)** cho môn **Kiểm thử và Đảm bảo chất lượng phần mềm (STQA)**.
@@ -13,18 +14,19 @@ Hệ thống cần kiểm thử: **Quản lý mượn sách Thư viện ABC** �
 
 > **⚠️ Sinh viên: Điền thông tin nhóm vào bảng dưới đây trước khi nộp bài.**
 
-| | Thông tin |
-|---|---|
-| **Tên nhóm** | `<!-- VD: Nhóm 1 -->` |
-| **Lớp** | `<!-- VD: SE001.P11 -->` |
-| **Học kỳ** | `<!-- VD: HK2 2025-2026 -->` |
+|              | Thông tin     |
+| ------------ | ------------- |
+| **Tên nhóm** | Nhóm 29       |
+| **Lớp**      | 252ICT2012.L1 |
+| **Học kỳ**   | HK2 2025-2026 |
 
 | # | MSSV | Họ và tên | Vai trò |
 |---|------|-----------|---------|
-| 1 | | | Nhóm trưởng |
-| 2 | | | Thành viên |
-| 3 | | | Thành viên |
-| 4 | | | Thành viên |
+| 1 | 2410299 | Nguyễn Xuân Hiển | Nhóm trưởng |
+| 2 | 23BA14224 | Lê Bá Ninh | Thành viên |
+| 3 | 23BA14120 | Đặng Việt Hoàng | Thành viên |
+| 4 | 23BA14278 | Nguyễn Quang Thuần | Thành viên |
+| 5 | 23BA14145 | Nguyễn Doãn Kha | Thành viên |
 
 ---
 

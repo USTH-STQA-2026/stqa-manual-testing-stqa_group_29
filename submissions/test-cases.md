@@ -1,83 +1,195 @@
-# Test Cases — Bảng trường hợp kiểm thử
+# Test Cases
 
-> **Hướng dẫn**: Viết tối thiểu **20 TC** phủ đủ các chức năng chính (REQ-01 → REQ-08).
-> Xem [examples/sample-test-case.md](../examples/sample-test-case.md) để hiểu cách viết TC tốt.
-> Tự tổ chức và phân nhóm test case theo cách hợp lý nhất.
-
-| Thông tin | |
-|---|---|
-| **Nhóm** | `<!-- Tên nhóm -->` |
-| **Ngày tạo** | `<!-- DD/MM/YYYY -->` |
-| **Hệ thống** | https://stqa.rbc.vn |
-| **Tham chiếu** | SRS v1.0 |
+| Information      |                     |
+| ---------------- | ------------------- |
+| **Group**        | Group 29            |
+| **Date created** | 16/05/2026          |
+| **System**       | https://stqa.rbc.vn |
+| **Reference**    | SRS v1.0            |
 
 ---
 
-## Bước 1: Mô hình hóa miền đầu vào — Input Domain Modeling (IDM)
+# Step 1: Input Domain Modeling (IDM)
 
-> 📖 **Textbook:** Chương 6 — *Input Domain Modeling*, Paul Ammann & Jeff Offutt.
->
-> **Trước khi viết Test Case**, nhóm **phải** phân tích miền đầu vào bằng bảng IDM bên dưới.
-> Mỗi chức năng cần xác định: **Đặc tính (Characteristic)**, **Phân vùng (Block/Partition)**, và **Giá trị đại diện (Value)**.
+> 📖 **Textbook:** Chapter 6 — *Input Domain Modeling*, Paul Ammann & Jeff Offutt.
+> **Before writing Test Cases**, the group **must** analyze the input domain using the IDM tables below.
+> Each function needs to identify: **Characteristic**, **Block/Partition**, and **Representative Value**.
 
-### IDM — Đăng nhập (REQ-01)
+## IDM — Login (REQ-01)
 
-| Đặc tính (Characteristic) | Phân vùng (Block) | Giá trị đại diện (Value) | Kết quả mong đợi |
-|---|---|---|---|
-| Email có tồn tại trong DB? | Có | `librarian@library.com` | Đăng nhập thành công |
-| | Không | `noone@email.com` | Thông báo lỗi |
-| Mật khẩu có đúng? | Đúng | `admin123` | Đăng nhập thành công |
-| | Sai | `wrongpass` | Thông báo lỗi |
-| Ô nhập có rỗng? | Không rỗng | (giá trị bất kỳ) | Xử lý bình thường |
-| | Rỗng | `""` | Thông báo "Vui lòng nhập..." |
+| Characteristic      | Block (Partition) | Representative Value    | Expected Result           |
+| ------------------- | ----------------- | ----------------------- | ------------------------- |
+| Email exists in DB? | Yes               | `librarian@library.com` | Login successful          |
+|                     | No                | `noone@email.com`       | Error message             |
+| Password correct?   | Correct           | `admin123`              | Login successful          |
+|                     | Incorrect         | `wrongpass`             | Error message             |
+| Input field empty?  | Non-empty         | (any value)             | Normal processing         |
+|                     | Empty             | `""`                    | Message "Please enter..." |
 
-### IDM — Tìm kiếm sách (REQ-03)
+## IDM — View Book List (REQ-02)
 
-| Đặc tính (Characteristic) | Phân vùng (Block) | Giá trị đại diện (Value) | Kết quả mong đợi |
-|---|---|---|---|
-| Từ khóa có tồn tại trong DB? | Có (tên sách) | `"Flutter"` | Hiển thị sách chứa "Flutter" |
-| | Có (tên tác giả) | `"Nguyễn"` | Hiển thị sách của tác giả Nguyễn |
-| | Không | `"XYZ123"` | Danh sách rỗng |
-| Phân biệt HOA/thường? | Chữ thường | `"flutter"` | Kết quả giống "Flutter" |
-| | Chữ HOA | `"FLUTTER"` | Kết quả giống "Flutter" |
+| Characteristic         | Block (Partition) | Representative Value | Expected Result                                   |
+| ---------------------- | ----------------- | -------------------- | ------------------------------------------------- |
+| User role?             | Librarian         | LIB001               | Can view all 20 books                             |
+|                        | Member            | MEM002               | Can view all 20 books                             |
+| Book status displayed? | Available         | BOOK001              | Display "Available"                               |
+|                        | Borrowed          | BOOK003              | Display "Borrowed"                                |
+|                        | Lost              | BOOK007              | Display "Lost"                                    |
+| Status update?         | After borrowing   | BOOK001 → borrow     | Status changes "Available" → "Borrowed" instantly |
+|                        | After returning   | BOOK003 → return     | Status changes "Borrowed" → "Available" instantly |
 
-### IDM — Mượn sách (REQ-04, REQ-05)
+## IDM — Search Books (REQ-03)
 
-| Đặc tính (Characteristic) | Phân vùng (Block) | Giá trị đại diện (Value) | Kết quả mong đợi |
-|---|---|---|---|
-| Trạng thái sách? | Có sẵn | BOOK001 | Cho phép mượn |
-| | Đang mượn | BOOK003 | Không cho phép |
-| | Thất lạc | BOOK007 | Không cho phép |
-| Trạng thái thành viên? | Hoạt động | MEM002 | Cho phép mượn |
-| | Tạm ngưng | MEM004 | Từ chối, thông báo lỗi |
-| | Hết hạn | MEM005 | Từ chối, thông báo lỗi |
-| Số sách đang mượn? | < 3 (BVA: 0, 1, 2) | MEM006 (0 sách) | Cho phép mượn |
-| | = 3 (BVA: giới hạn) | MEM đã mượn 3 sách | Từ chối, thông báo vượt giới hạn |
+| Characteristic        | Block (Partition) | Representative Value | Expected Result                    |
+| --------------------- | ----------------- | -------------------- | ---------------------------------- |
+| Keyword exists in DB? | Yes (book title)  | `"Flutter"`          | Display books containing "Flutter" |
+|                       | Yes (author name) | `"Nguyễn"`           | Display books by author Nguyễn     |
+|                       | No                | `"XYZ123"`           | Empty list                         |
+| Case-sensitive?       | Lowercase         | `"flutter"`          | Same result as "Flutter"           |
+|                       | Uppercase         | `"FLUTTER"`          | Same result as "Flutter"           |
+| Filter by category?   | Category selected | `"Technology"`       | Only books of that category        |
+|                       | Search + filter   | keyword + category   | Intersection of both conditions    |
 
-### IDM — `<!-- Nhóm tự bổ sung cho REQ-05 đến REQ-08 -->`
+## IDM — Borrow Book (REQ-04, REQ-05)
 
-| Đặc tính (Characteristic) | Phân vùng (Block) | Giá trị đại diện (Value) | Kết quả mong đợi |
-|---|---|---|---|
-| `<!-- Nhóm tự điền -->` | | | |
+| Characteristic            | Block (Partition)       | Representative Value | Expected Result            |
+| ------------------------- | ----------------------- | -------------------- | -------------------------- |
+| Book status?              | Available [R1, R2]      | BOOK001              | Allow borrowing            |
+|                           | Borrowed [R5]           | BOOK003              | Not allowed                |
+|                           | Lost [R5]               | BOOK007              | Not allowed                |
+| Member status?            | Active [R1, R2]         | MEM002               | Allow borrowing            |
+|                           | Suspended [R3]          | MEM004               | Reject, error message      |
+|                           | Expired [R4]            | MEM005               | Reject, error message      |
+| Number of books borrowed? | < 3 (BVA: 0, 1, 2) [R1] | MEM006 (0 books)     | Allow borrowing            |
+|                           | = 3 (BVA: limit) [R2]   | MEM with 3 books     | Reject, over-limit message |
 
-> 💡 **Gợi ý kỹ thuật**: Sử dụng **Phân lớp tương đương (EP)** cho các phân vùng rời rạc, **Phân tích giá trị biên (BVA)** cho các phân vùng số (ví dụ: giới hạn 3 sách). Xem textbook §6.1–6.3.
+## Decision Table — Borrow Book (REQ-04)
+
+**Conditions:**  **C1**: Book status = "Available"? / **C2**: Member status = "Active"? / **C3**: Number of books borrowed < 3?
+
+| Rule | C1: Book "Available"?Y | C2: Member "Active"? | C3: Books < 3? | Result                                          |
+| ---- | ---------------------- | -------------------- | -------------- | ----------------------------------------------- |
+| R1   | Yes                    | Yes                  | Yes            | Borrow successful, create slip (dueDate +14)    |
+| R2   | Yes                    | Yes                  | No             | "Maximum borrow limit reached (3 books)"        |
+| R3   | Yes                    | No (Suspended)       | -              | "Member is currently suspended. Cannot borrow." |
+| R4   | Yes                    | No (Expired)         | -              | "Member has expired. Cannot borrow."            |
+| R5   | No (Borrowed / Lost)   | -                    | -              | "Book not available for borrowing"              |
+
+## IDM — Return Book (REQ-05)
+
+| Characteristic        | Block (Partition)   | Representative Value | Expected Result                 |
+| --------------------- | ------------------- | -------------------- | ------------------------------- |
+| Slip status?          | Borrowing           | BR001                | Allow return                    |
+|                       | Returned            | BR002                | Do not allow re-return          |
+| Relation to returner? | Own slip            | MEM002 returns BR001 | Allow return                    |
+|                       | Other member's slip | MEM003 returns BR001 | Reject / no return button shown |
+| Return time?          | Before due date     | within 14 days       | Return successful, no warning   |
+|                       | After due date      | over 14 days         | Return successful + warning     |
+
+## IDM — Overdue Check (REQ-06)
+
+| Characteristic              | Block (Partition) | Representative Value | Expected Result                   |
+| --------------------------- | ----------------- | -------------------- | --------------------------------- |
+| User role?                  | Librarian         | LIB001               | Has rights to use "Check Overdue" |
+|                             | Member            | MEM002               | Button not displayed              |
+| Due date compared to today? | Before today      | BR001 (old dueDate)  | Marked as "Overdue"               |
+|                             | After today       | New BR (today + 14)  | Keeps "Borrowing" status          |
+| Slip status before check?   | Borrowing         | BR001                | Can switch to "Overdue"           |
+|                             | Returned          | BR002, BR004, BR005  | No change                         |
+
+## IDM — Member Management (REQ-07)
+
+| Characteristic      | Block (Partition)   | Representative Value  | Expected Result              |
+| ------------------- | ------------------- | --------------------- | ---------------------------- |
+| User role?          | Librarian           | LIB001                | Can access "Members" tab     |
+|                     | Member              | MEM002                | "Members" tab not visible    |
+| Valid email format? | Valid               | `zxqthuan@gmail.com`  | Allow creation               |
+|                     | Missing dot         | `user@domain`         | Format error message         |
+|                     | Missing @ character | `userdomain.com`      | Format error message         |
+| Duplicate email?    | Not duplicate       | New email             | Allow creation               |
+|                     | Duplicate           | `ba.nguyen@email.com` | Error "Email already exists" |
+| Full name?          | Has value           | `Nguyễn Quang Thuần`  | Allow creation               |
+|                     | Empty               | `""`                  | Error requiring Full name    |
+
+## IDM — Look up Borrow Slips (REQ-08)
+
+| Characteristic       | Block (Partition)              | Representative Value  | Expected Result                |
+| -------------------- | ------------------------------ | --------------------- | ------------------------------ |
+| User role?           | Librarian                      | LIB001                | Can look up all slips          |
+|                      | Member                         | MEM003                | Can only see own slips         |
+| Searched member ID?  | Exists                         | MEM002                | Display full slip list         |
+|                      | Does not exist                 | MEM999                | Empty list / not-found message |
+| Slip status display? | Borrowing / Returned / Overdue | BR003 / BR002 / BR001 | Display correct status labels  |
+
+> 💡 **Technique hint**: Use **Equivalence Partitioning (EP)** for discrete partitions, **Boundary Value Analysis (BVA)** for numeric partitions (e.g., the 3-book limit). See textbook §6.1–6.3.
 
 ---
 
-## Bước 2: Test Cases
+# Step 2: Test Cases
 
-<!-- Tự tổ chức bảng test case: có thể chia nhóm theo chức năng, theo REQ, hoặc theo luồng nghiệp vụ — tùy nhóm quyết định. -->
-<!-- Mỗi TC phải ánh xạ ngược về ít nhất 1 dòng trong bảng IDM ở Bước 1. -->
+*Test cases are grouped according to REQ 01-08.*
+*Test case naming format: TC-(REQ number)-(01, 02, 03, ...)*
 
-| Mã TC | Mục tiêu kiểm thử | Tiền điều kiện | Bước thực hiện | Dữ liệu đầu vào | Kết quả mong đợi | REQ | Kỹ thuật |
-|-------|-------------------|---------------|---------------|-----------------|------------------|-----|---------|
-| | | | | | | | |
+| TC ID | Test Objective                                                           | Preconditions                                                                                                                                                           | Test Steps                                                                                                                                                                                                     | Input Data                                                                            | Expected Result                                                                                                                                                                                               | REQ    | Technique           |
+| ----- | ------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ | ------------------- |
+| TC-01 | Successful login with Librarian account                                  | 1. Open Chrome, go to https://stqa.rbc.vn<br>2. System displays the login page<br>3. No prior login session                                                             | 1. Enter email in the **Email** field<br>2. Enter password in the **Password** field<br>3. Click **"Login"** button                                                                                            | Email: `librarian@library.com`<br>Password: `admin123`                                | 1. Redirect to home page<br>2. AppBar displays **"Nguyễn Thủ Thư"** + role **"Librarian"**<br>3. Displays tabs: Books, Borrow/Return, Members<br>4. Has "Check Overdue" and "Restore Data" 🔄 buttons         | REQ-01 | EP                  |
+| TC-02 | Successful login with Member account                                     | Login page is open                                                                                                                                                      | 1. Enter email in the **Email** field<br>2. Enter password in the **Password** field<br>3. Click **"Login"** button                                                                                            | Email: `ba.nguyen@email.com`<br>Password: `password123`                               | 1. Redirect to home page<br>2. AppBar displays **"Nguyễn Học Bá"** + role **"Member"**<br>3. Only displays 2 tabs: Books, Borrow/Return (NO Members tab)<br>4. NO "Check Overdue" or "Restore Data" buttons   | REQ-01 | EP                  |
+| TC-03 | Login failure — email does not exist                                     | Login page is open                                                                                                                                                      | 1. Enter a non-existing email in the Email field<br>2. Enter any password<br>3. Click **"Login"** button                                                                                                       | Email: `nobody@test.com`<br>Password: `anything`                                      | 1. No page redirect, still on login page<br>2. Display error **"Member not found"**<br>3. AppBar does not show user name                                                                                      | REQ-01 | EP                  |
+| TC-04 | Login failure — wrong password                                           | Login page is open                                                                                                                                                      | 1. Enter an existing email<br>2. Enter a wrong password<br>3. Click **"Login"** button                                                                                                                         | Email: `ba.nguyen@email.com`<br>Password: `wrongpass`                                 | 1. No page redirect<br>2. Display error **"Incorrect password"** (NOT "Member not found")<br>3. Password field is usually cleared, email field retains its value                                              | REQ-01 | EP                  |
+| TC-05 | Login failure — both email and password are empty                        | Login page is open, all input fields are empty                                                                                                                          | 1. Leave Email field empty<br>2. Leave Password field empty<br>3. Click **"Login"** button                                                                                                                     | Email: `""` (empty)<br>Password: `""` (empty)                                         | 1. No page redirect<br>2. Display message **"Please enter email and password"**                                                                                                                               | REQ-01 | EP                  |
+| TC-06 | Login failure — only email entered, password empty                       | Login page is open                                                                                                                                                      | 1. Enter a valid email<br>2. Do not enter password<br>3. Click **"Login"** button                                                                                                                              | Email: `librarian@library.com`<br>Password: `""` (empty)                              | 1. No page redirect<br>2. Display message **"Please enter email and password"**                                                                                                                               | REQ-01 | EP                  |
+| TC-07 | Librarian can view all 20 books with full information                    | 1. Reset data (F5)<br>2. Log in with LIB001 (Nguyễn Thủ Thư)                                                                                                            | 1. After login, go to **Books** tab<br>2. Count total books displayed<br>3. Inspect details of some books (BOOK001, BOOK003, BOOK007)                                                                          | No input — observation only                                                           | 1. Displays exactly **20 books** (BOOK001 → BOOK020)<br>2. Each book shows: **title, author, category, publication year, status**<br>3. BOOK001 → "Available"; BOOK003 → "Borrowed"; BOOK007 → "Lost"         | REQ-02 | EP                  |
+| TC-08 | Member can view all 20 books                                             | 1. Reset data (F5)<br>2. Log in with MEM002 (Nguyễn Học Bá)                                                                                                             | 1. Go to **Books** tab<br>2. Count total books displayed<br>3. Inspect details of BOOK001, BOOK003, BOOK007                                                                                                    | No input                                                                              | 1. Displays exactly **20 books**<br>2. Each book has all 5 fields of information<br>3. Book status displayed same as TC-07 (Members are not restricted from viewing)                                          | REQ-02 | EP                  |
+| TC-09 | Book status updates immediately on borrow                                | 1. Reset data (F5)<br>2. Log in with MEM006 (Hoàng Cá Biệt) (currently borrowing 0 books)<br>3. BOOK001 has status "Available"                                          | 1. Go to **Books** tab, confirm BOOK001 is **"Available"**<br>2. Click **"Borrow"** button on BOOK001<br>3. Observe BOOK001 status right after                                                                 | Acted-on book: BOOK001                                                                | 1. BOOK001 status changes immediately from **"Available"** → **"Borrowed"** without refresh<br>2. BOOK001's "Borrow" button disappears or is disabled                                                         | REQ-02 | EP                  |
+| TC-10 | Book status updates immediately on return                                | 1. Reset data (F5)<br>2. Log in with MEM002 (Nguyễn Học Bá) (currently borrowing BOOK003 per seed - BR001)                                                              | 1. Go to **Books** tab, confirm BOOK003 is **"Borrowed"**<br>2. Switch to **Borrow/Return** tab<br>3. Click **"Return"** button on slip BR001<br>4. Go back to **Books** tab<br>5. Observe BOOK003 status      | Acted-on book: BOOK003 (slip BR001)                                                   | 1. After return, BOOK003 changes from **"Borrowed"** → **"Available"** immediately on Books tab<br>2. No page refresh required                                                                                | REQ-02 | EP                  |
+| TC-11 | Search book by title (result exists)                                     | 1. Logged in (MEM002 or LIB001) (Nguyễn Học Bá or Nguyễn Thủ Thư)<br>2. On **Books** tab                                                                                | 1. Enter keyword in the search box<br>2. Observe displayed book list                                                                                                                                           | Keyword: `Flutter`                                                                    | 1. List displays **BOOK001 "Lập trình Flutter cơ bản"**<br>2. Books not containing "Flutter" in title or author are hidden                                                                                    | REQ-03 | EP                  |
+| TC-12 | Search book by author name (result exists)                               | Logged in, on Books tab                                                                                                                                                 | 1. Enter author name in search box<br>2. Observe displayed book list                                                                                                                                           | Keyword: `Nguyễn Minh Đức`                                                            | 1. List displays books by author Nguyễn Minh Đức: **BOOK001** and **BOOK009 "Nhập môn lập trình Python"**<br>2. Total results: 2 books                                                                        | REQ-03 | EP                  |
+| TC-13 | Search is case-insensitive                                               | Logged in, on Books tab                                                                                                                                                 | 1. Enter `FLUTTER` → note results<br>2. Clear, enter `flutter` → note results<br>3. Clear, enter `FlUtTeR` → note results                                                                                      | Keyword 1: `FLUTTER`<br>Keyword 2: `flutter`<br>Keyword 3: `FlUtTeR`                  | All 3 searches return the **SAME result**: BOOK001 "Lập trình Flutter cơ bản"                                                                                                                                 | REQ-03 | EP                  |
+| TC-14 | Search with non-existing keyword                                         | Logged in, on Books tab                                                                                                                                                 | 1. Enter a non-existing keyword in search box<br>2. Observe displayed results                                                                                                                                  | Keyword: `BarcaVoDichC1`                                                              | 1. Empty book list<br>2. Display message **"No books found"**                                                                                                                                                 | REQ-03 | EP                  |
+| TC-15 | Filter books by "Technology" category                                    | Logged in, on Books tab, search box empty                                                                                                                               | 1. Open category filter dropdown<br>2. Select **"Technology"**<br>3. Count displayed books and check the "Category" column                                                                                     | Filter category: `Technology`                                                         | Only displays Technology category books: **BOOK001, BOOK002, BOOK003, BOOK005, BOOK008, BOOK009, BOOK010, BOOK011** (8 books)                                                                                 | REQ-03 | EP                  |
+| TC-16 | Combine search + category filter                                         | Logged in, on Books tab                                                                                                                                                 | 1. Select category **"Technology"** in dropdown<br>2. Enter keyword in search box<br>3. Observe results                                                                                                        | Keyword: `Nguyễn`<br>Category: `Technology`                                           | Display Technology books with author surname Nguyễn: **BOOK001 (Nguyễn Minh Đức), BOOK009 (Nguyễn Minh Đức)**                                                                                                 | REQ-03 | EP                  |
+| TC-17 | [R1] Borrow successful — Available book, Active member, 0 books borrowed | 1. Reset data (F5)<br>2. Log in with MEM006 (Hoàng Cá Biệt) (Active, 0 books borrowed)<br>3. BOOK001 has status "Available"                                             | 1. Go to **Books** tab<br>2. Find BOOK001 "Lập trình Flutter cơ bản"<br>3. Click **"Borrow"** button<br>4. Go to **Borrow/Return** tab to check the new slip                                                   | Member: MEM006<br>Book: BOOK001                                                       | 1. Borrow successful, confirmation message shown<br>2. BOOK001 → "Borrowed" on Books tab<br>3. New slip has: Book BOOK001, Borrow date today, Due date = today + 14 days, Status "Borrowing"                  | REQ-04 | Decision Table, EP  |
+| TC-18 | [R5] Reject when borrowing an already-borrowed book                      | 1. Reset data (F5)<br>2. Log in with MEM003 (Trần Dựa Dẫm) (Active)<br>3. BOOK003 is currently borrowed by MEM002 (seed BR001)                                          | 1. Go to **Books** tab<br>2. Find BOOK003 "Kiểm thử phần mềm nhập môn"<br>3. Observe BOOK003's Borrow button<br>4. If clickable, click it                                                                      | Member: MEM003<br>Book: BOOK003                                                       | 1. "Borrow" button is **disabled** or **not displayed**<br>2. Or if clickable → displays **"Book not available for borrowing"**<br>3. No new slip created                                                     | REQ-04 | Decision Table, EP  |
+| TC-19 | [R5] Reject when borrowing a Lost book                                   | 1. Reset data (F5)<br>2. Log in with MEM006 (Hoàng Cá Biệt)<br>3. BOOK007 "Kinh tế vi mô" has status "Lost"                                                             | 1. Go to **Books** tab<br>2. Find BOOK007 "Kinh tế vi mô"<br>3. Observe Borrow button                                                                                                                          | Member: MEM006<br>Book: BOOK007                                                       | 1. "Borrow" button is disabled or not displayed<br>2. Book displays status "Lost"<br>3. Cannot create a borrow slip for BOOK007                                                                               | REQ-04 | Decision Table, EP  |
+| TC-20 | [R3] Reject when member is Suspended                                     | 1. Reset data (F5)<br>2. Log in with MEM004 (Lê Cần Cù — Suspended)                                                                                                     | 1. Go to **Books** tab<br>2. Click **"Borrow"** button on BOOK001                                                                                                                                              | Member: MEM004<br>Book: BOOK001 (Available)                                           | 1. Borrow rejected<br>2. Display message **"Member is suspended. Cannot borrow books."**<br>3. Message must state the reason clearly as **Suspended**, NOT "Expired"<br>4. BOOK001 remains "Available"        | REQ-04 | Decision Table, EP  |
+| TC-21 | [R4] Reject when member is Expired                                       | 1. Reset data (F5)<br>2. Log in with MEM005 (Phạm Trung Bình — Expired)                                                                                                 | 1. Go to **Books** tab<br>2. Click **"Borrow"** button on BOOK001                                                                                                                                              | Member: MEM005<br>Book: BOOK001 (Available)                                           | 1. Borrow rejected<br>2. Display message **"Member has expired. Cannot borrow books."**<br>3. Message states reason clearly as **Expired**, NOT "Suspended"<br>4. BOOK001 remains "Available"                 | REQ-04 | Decision Table, EP  |
+| TC-22 | [R1, BVA] Borrow 3rd book — exactly at lower boundary (still allowed)    | 1. Reset data (F5)<br>2. Log in with MEM006 (Hoàng Cá Biệt)<br>3. Setup: Have MEM006 borrow 2 books BOOK001 and BOOK002 beforehand                                      | 1. Go to **Books** tab<br>2. Click **"Borrow"** on BOOK005 "Trí tuệ nhân tạo đại cương"<br>3. Check MEM006's borrow slip count                                                                                 | Books borrowed before test: 2<br>Test borrow book: BOOK005                            | 1. Borrow successful (since 2 < 3, lower boundary allows)<br>2. MEM006 is now borrowing exactly 3 books: BOOK001, BOOK002, BOOK005<br>3. BOOK005 → "Borrowed"                                                 | REQ-04 | BVA, Decision Table |
+| TC-23 | [R2, BVA] Borrow 4th book — over boundary (rejected)                     | 1. Reset data (F5)<br>2. Log in with MEM006 (Hoàng Cá Biệt)<br>3. Setup: Have MEM006 borrow 3 books BOOK001, BOOK002, BOOK005                                           | 1. Go to **Books** tab<br>2. Click **"Borrow"** on BOOK008 "Mạng máy tính"<br>3. Observe message                                                                                                               | Books borrowed before test: 3<br>Test borrow book: BOOK008                            | 1. Borrow rejected<br>2. Display message **"Maximum borrow limit reached (3 books)"**<br>3. BOOK008 remains "Available"<br>4. MEM006 is still borrowing exactly 3 books                                       | REQ-04 | BVA, Decision Table |
+| TC-24 | Due date is computed correctly = borrow date + 14 days                   | 1. Reset data (F5)<br>2. Log in with MEM006 (Hoàng Cá Biệt)<br>3. Remember today's date                                                                                 | 1. Go to Books tab, click "Borrow" on BOOK001<br>2. Go to Borrow/Return tab, view the newly created slip<br>3. Compare **borrow date** and **due date**                                                        | Borrow book: BOOK001<br>Expected borrow date: today                                   | 1. Borrow date = today<br>2. Due date = today + 14 days                                                                                                                                                       | REQ-04 | EP                  |
+| TC-25 | Return successful for a borrowing slip (on time)                         | 1. Reset data (F5)<br>2. Log in with MEM006 (Hoàng Cá Biệt)<br>3. Setup: Have MEM006 borrow BOOK001 in the same session                                                 | 1. Go to **Borrow/Return** tab<br>2. Find BOOK001's borrow slip in "My borrow slips"<br>3. Click **"Return"** button<br>4. Confirm return (if dialog appears)<br>5. Go back to Books tab, check BOOK001 status | Slip to return: MEM006's BOOK001 borrow slip (just created)                           | 1. Return successful, confirmation message shown<br>2. Slip status changes to **"Returned"**<br>3. BOOK001 → **"Available"** on Books tab<br>4. **No overdue warning**                                        | REQ-05 | EP                  |
+| TC-26 | Return overdue book — system shows warning                               | 1. Reset data (F5)<br>2. Log in with MEM002 (Nguyễn Học Bá)                                                                                                             | 1. Go to **Borrow/Return** tab<br>2. Find slip BR001 (BOOK003 "Kiểm thử phần mềm nhập môn")<br>3. Click **"Return"** button<br>4. Observe system message                                                       | Slip to return: BR001 (BOOK003)                                                       | 1. Return successful<br>2. System displays **overdue warning**<br>3. BOOK003 → "Available"<br>4. Slip BR001 → "Returned"                                                                                      | REQ-05 | EP                  |
+| TC-27 | Do not allow re-returning a returned slip                                | 1. Reset data (F5)<br>2. Log in with MEM003 (Trần Dựa Dẫm)<br>3. Slip BR002 — MEM003 borrowed BOOK001 from 10/08/2024, returned 20/08/2024                              | 1. Go to **Borrow/Return** tab<br>2. Find returned slip BR002 (BOOK001)<br>3. Observe whether "Return" button exists                                                                                           | Slip: BR002 (returned)                                                                | 1. Slip BR002 shows status "Returned"<br>2. **No** "Return" button on this slip (or disabled)<br>3. If forced action → no change occurs                                                                       | REQ-05 | EP                  |
+| TC-28 | A Member cannot return another member's book                             | 1. Reset data (F5)<br>2. Log in with MEM003 (Trần Dựa Dẫm)<br>3. Slip BR001 belongs to MEM002 (Nguyễn Học Bá)                                                           | 1. Go to **Borrow/Return** tab<br>2. Check "My borrow slips" list<br>3. Try to access MEM002's slip BR001<br>4. Check whether "Return" button exists for BR001                                                 | Other-member slip: BR001 (of MEM002)                                                  | 1. Slip BR001 does NOT appear in "My borrow slips"<br>2. If looked up, no "Return" button<br>3. If forced via URL/console → rejected                                                                          | REQ-05 | EP                  |
+| TC-29 | Librarian clicks "Check Overdue" — slip BR001 is marked                  | 1. Reset data (F5)<br>2. Log in with LIB001 (Nguyễn Thủ Thư)<br>3. Seed data: BR001 has dueDate 15/09/2024 → overdue compared to today                                  | 1. Go to **Borrow/Return** tab<br>2. Observe BR001 status **before** clicking button<br>3. Click **"Check Overdue"** button<br>4. Observe BR001 status **after** clicking                                      | Slip to check: BR001                                                                  | 1. **Before**: BR001 has status "Borrowing"<br>2. **After**: BR001 changes to **"Overdue"**<br>3. Other non-overdue slips (BR003) keep "Borrowing"<br>4. Returned slips (BR002, BR004, BR005) are not changed | REQ-06 | EP                  |
+| TC-30 | Member does NOT have permission to use "Check Overdue"                   | 1. Reset data (F5)<br>2. Log in with MEM002 (Nguyễn Học Bá)                                                                                                             | 1. Observe the entire interface after login<br>2. Look for "Check Overdue" button                                                                                                                              | No input                                                                              | "Check Overdue" button is **not displayed** for Members — only Librarians can see this function                                                                                                               | REQ-06 | EP                  |
+| TC-31 | Member sees their own overdue slip after Librarian's check               | 1. Reset data (F5)<br>2. Log in as LIB001 (Nguyễn Thủ Thư), go to Borrow/Return tab, click "Check Overdue"<br>3. Log out<br>4. Log in again with MEM002 (Nguyễn Học Bá) | 1. Log in as MEM002<br>2. Go to **Borrow/Return** tab<br>3. Observe slip BR001                                                                                                                                 | Slip to view: BR001 (of MEM002)                                                       | 1. MEM002 sees slip BR001 in "My borrow slips" list<br>2. BR001 status displays **"Overdue"**<br>3. May have warning/highlight about being overdue                                                            | REQ-06 | EP                  |
+| TC-32 | Slip not yet due is not marked overdue                                   | 1. Reset data (F5)<br>2. Log in as MEM006 (Hoàng Cá Biệt), borrow BOOK001 (dueDate = today + 14)<br>3. Log out, log in as LIB001                                        | 1. Go to Borrow/Return tab<br>2. Click **"Check Overdue"**<br>3. Observe MEM006's BOOK001 slip status                                                                                                          | MEM006's newly created BOOK001 borrow slip                                            | MEM006's BOOK001 slip retains status **"Borrowing"**, is NOT marked overdue                                                                                                                                   | REQ-06 | EP                  |
+| TC-33 | Librarian adds a new member with valid data                              | 1. Reset data (F5)<br>2. Log in with LIB001 (Nguyễn Thủ Thư)<br>3. Go to **Members** tab                                                                                | 1. Click **"Add Member"** button<br>2. Enter full name in Full Name field<br>3. Enter email in Email field<br>4. Enter phone in Phone field<br>5. Click **"Save"**                                             | Full Name: `Nguyễn Quang Thuần`<br>Email: `zxqthuan@gmail.com`<br>Phone: `0934217834` | 1. Display success message<br>2. New member appears in the list<br>3. Total members increases from 6 → 7                                                                                                      | REQ-07 | EP                  |
+| TC-34 | Add Member — Email missing dot in domain                                 | Logged in as LIB001 (Nguyễn Thủ Thư), on Add Member form                                                                                                                | 1. Enter valid full name<br>2. Enter email missing dot after @<br>3. Enter valid phone<br>4. Click **"Save"**                                                                                                  | Full Name: `Barca`<br>Email: `user@domain`<br>Phone: `0933333333`                     | 1. No new member created<br>2. Display invalid email error message<br>3. Form remains open for user to fix                                                                                                    | REQ-07 | EP                  |
+| TC-35 | Add Member — Email missing @ character                                   | Logged in as LIB001 (Nguyễn Thủ Thư), on Add Member form                                                                                                                | 1. Enter full Full Name, Phone<br>2. Enter email missing @<br>3. Click **"Save"**                                                                                                                              | Full Name: `Messi`<br>Email: `userdomain.com`<br>Phone: `0966666666`                  | 1. No member created<br>2. Display email error message                                                                                                                                                        | REQ-07 | EP                  |
+| TC-36 | Add Member — Email duplicates an existing member                         | 1. Logged in as LIB001 (Nguyễn Thủ Thư)<br>2. On Add Member form<br>3. Email `ba.nguyen@email.com` already exists in seed                                               | 1. Enter full name<br>2. Enter duplicate email<br>3. Enter phone<br>4. Click **"Save"**                                                                                                                        | Full Name: `Neymar`<br>Email: `ba.nguyen@email.com`<br>Phone: `0911111111`            | 1. No new member created<br>2. Display error **"Email already exists"**<br>3. Total members remains = 6                                                                                                       | REQ-07 | EP                  |
+| TC-37 | Add Member — Leave Full Name empty                                       | Logged in as LIB001 (Nguyễn Thủ Thư), on Add Member form                                                                                                                | 1. Leave Full Name field empty<br>2. Enter valid email and phone<br>3. Click **"Save"**                                                                                                                        | Full Name: `""` (empty)<br>Email: `realvarid@email.com`<br>Phone: `0936363636`        | 1. No member created<br>2. Display message requiring Full Name                                                                                                                                                | REQ-07 | EP                  |
+| TC-38 | Member does NOT have permission to access member management              | 1. Reset data (F5)<br>2. Log in with MEM002 (Nguyễn Học Bá)                                                                                                             | 1. Observe navigation bar / available tabs<br>2. Look for "Members" tab or "Add Member" button                                                                                                                 | No input                                                                              | "Members" tab is not displayed in Member's interface — only 2 tabs are visible: Books, Borrow/Return                                                                                                          | REQ-07 | EP                  |
+| TC-39 | Librarian looks up borrow slips of a specific member                     | 1. Reset data (F5)<br>2. Log in with LIB001 (Nguyễn Thủ Thư)                                                                                                            | 1. Go to **Borrow/Return** tab<br>2. Find lookup / filter by member ID box<br>3. Enter member ID and confirm search                                                                                            | Searched member ID: `MEM002`                                                          | 1. Displays MEM002's slip list: BR001 (Borrowing), BR004 (Returned)<br>2. Each slip has all 5 fields: slip ID, book, borrow date, due date, status                                                            | REQ-08 | EP                  |
+| TC-40 | Librarian looks up with non-existing member ID                           | Logged in as LIB001 (Nguyễn Thủ Thư), on Borrow/Return tab                                                                                                              | 1. Enter a non-existing ID in lookup box<br>2. Observe results                                                                                                                                                 | Searched member ID: `MEM999`                                                          | 1. Empty slip list<br>2. May display "No slips found" or equivalent message                                                                                                                                   | REQ-08 | EP                  |
+| TC-41 | Member only sees their own borrow slips                                  | 1. Reset data (F5)<br>2. Log in with MEM003 (Trần Dựa Dẫm)                                                                                                              | 1. Go to **Borrow/Return** tab<br>2. Observe "My borrow slips" list<br>3. Compare with seed data                                                                                                               | No input                                                                              | 1. Only sees MEM003's slips: **BR002 (BOOK001 — Returned)** and **BR005 (BOOK006 — Returned)**<br>2. Does NOT see other members' slips: BR001 (MEM002), BR003 (MEM006), BR004 (MEM002)                        | REQ-08 | EP                  |
+| TC-42 | Member cannot look up another member's slips                             | 1. Reset data (F5)<br>2. Log in with MEM003 (Trần Dựa Dẫm)                                                                                                              | 1. Go to **Borrow/Return** tab<br>2. Check if there is a lookup box allowing input of member ID<br>3. If so, enter another member's ID<br>4. Observe results                                                   | Attempted member ID: `MEM002`                                                         | 1. System does NOT display MEM002's slips<br>2. Or lookup box is unavailable for Member role<br>3. Or returns empty list / unauthorized message                                                               | REQ-08 | EP                  |
+| TC-43 | Slip status displays correctly (Borrowing / Returned / Overdue)          | 1. Reset data (F5)<br>2. Log in as LIB001 (Nguyễn Thủ Thư)<br>3. "Check Overdue" button has been clicked once previously                                                | 1. Go to **Borrow/Return** tab<br>2. Observe status of 3 slips BR001, BR002, BR003                                                                                                                             | Slips to check: BR001 (Overdue), BR002 (Returned), BR003 (Borrowing)                  | 1. BR001 → **"Overdue"**<br>2. BR002 → **"Returned"**<br>3. BR003 → **"Borrowing"**                                                                                                                           | REQ-08 | EP                  |
 
 ---
 
-## Tổng hợp
+# Summary
 
-| Nhóm chức năng | Số TC | REQ phủ | Kỹ thuật IDM áp dụng |
-|----------------|-------|---------|----------------------|
-| | | | |
-| **Tổng** | **<!-- ≥ 20 -->** | | |
+*Since test cases are split per REQ, the "REQ covered" column is omitted.*
+
+| Function Group | # TC | IDM Techniques Applied  |
+| -------------- | ---- | ----------------------- |
+| REQ-01         | 6    | EP                      |
+| REQ-02         | 4    | EP                      |
+| REQ-03         | 6    | EP                      |
+| REQ-04         | 8    | EP, BVA, Decision Table |
+| REQ-05         | 4    | EP                      |
+| REQ-06         | 4    | EP                      |
+| REQ-07         | 6    | EP                      |
+| REQ-08         | 5    | EP                      |
+| **Total**      | 43   | EP, BVA, Decision Table |

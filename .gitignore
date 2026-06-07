@@ -1,12 +1,16 @@
 # OS files
 .DS_Store
 Thumbs.db
+*.ico
+desktop.ini
 
 # Editor
 .vscode/
 .idea/
 *.swp
 *.swo
+**/.obsidian/**
 
-# Screenshots
-screenshots/
+# Guides and examples
+docs/**
+examples/**

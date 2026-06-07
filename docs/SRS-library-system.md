@@ -97,31 +97,31 @@ Hệ thống quản lý mượn sách cho một thư viện nhỏ. Hai vai trò 
 
 ### REQ-01: Đăng nhập / Login
 
-| Mục | Nội dung |
-|-----|---------|
-| **Mô tả** | Người dùng đăng nhập bằng email và mật khẩu |
-| **Input** | Email, mật khẩu |
-| **Quy tắc** | `email@domain.ext` + mật khẩu đúng → chuyển sang trang chủ. Sai → hiểu thị thông báo lỗi phù hợp. |
+| Mục               | Nội dung                                                                                                              |
+| ----------------- | --------------------------------------------------------------------------------------------------------------------- |
+| **Mô tả**         | Người dùng đăng nhập bằng email và mật khẩu                                                                           |
+| **Input**         | Email, mật khẩu                                                                                                       |
+| **Quy tắc**       | `email@domain.ext` + mật khẩu đúng → chuyển sang trang chủ. Sai → hiểu thị thông báo lỗi phù hợp.                     |
 | **Thông báo lỗi** | "Không tìm thấy thành viên" (email sai), "Mật khẩu không đúng" (MK sai), "Vui lòng nhập email và mật khẩu" (bỏ trống) |
-| **Sau đăng nhập** | Hiển thị tên người dùng + vai trò trên thanh ứng dụng (AppBar) |
+| **Sau đăng nhập** | Hiển thị tên người dùng + vai trò trên thanh ứng dụng (AppBar)                                                        |
 
 ### REQ-02: Xem danh sách sách / View Book List
 
-| Mục | Nội dung |
-|-----|---------|
-| **Mô tả** | Hiển thị tất cả sách trong thư viện |
+| Mục                    | Nội dung                                                                 |
+| ---------------------- | ------------------------------------------------------------------------ |
+| **Mô tả**              | Hiển thị tất cả sách trong thư viện                                      |
 | **Thông tin mỗi sách** | Tên sách, tác giả, thể loại, năm xuất bản, trạng thái (Có sẵn / Đã mượn) |
-| **Quyền truy cập** | Cả Thủ thư và Thành viên đều xem được |
-| **Cập nhật real-time** | Khi sách được mượn/trả → trạng thái cập nhật ngay lập tức |
+| **Quyền truy cập**     | Cả Thủ thư và Thành viên đều xem được                                    |
+| **Cập nhật real-time** | Khi sách được mượn/trả → trạng thái cập nhật ngay lập tức                |
 
 ### REQ-03: Tìm kiếm và lọc sách / Search & Filter Books
 
-| Mục | Nội dung |
-|-----|---------|
-| **Tìm kiếm** | Theo tên sách hoặc tác giả |
-| **Lọc** | Theo thể loại |
-| **Quy tắc** | Tìm kiếm **KHÔNG phân biệt chữ hoa/thường** (case-insensitive) |
-| **Không có kết quả** | Hiển thị thông báo "Không tìm thấy sách" |
+| Mục                  | Nội dung                                                       |
+| -------------------- | -------------------------------------------------------------- |
+| **Tìm kiếm**         | Theo tên sách hoặc tác giả                                     |
+| **Lọc**              | Theo thể loại                                                  |
+| **Quy tắc**          | Tìm kiếm **KHÔNG phân biệt chữ hoa/thường** (case-insensitive) |
+| **Không có kết quả** | Hiển thị thông báo "Không tìm thấy sách"                       |
 
 ### REQ-04: Mượn sách / Borrow Book
 
@@ -172,14 +172,14 @@ Hệ thống quản lý mượn sách cho một thư viện nhỏ. Hai vai trò 
 
 ### 3.1. Tài khoản / Accounts
 
-| Email | Mật khẩu | Vai trò | Trạng thái | ID |
-|-------|----------|---------|-----------|-----|
-| `librarian@library.com` | `admin123` | Thủ thư | Hoạt động | LIB001 |
-| `ba.nguyen@email.com` | `password123` | Thành viên | Hoạt động | MEM002 |
-| `dam.tran@email.com` | `password123` | Thành viên | Hoạt động | MEM003 |
-| `cu.le@email.com` | `password123` | Thành viên | Tạm ngưng | MEM004 |
-| `binh.pham@email.com` | `password123` | Thành viên | Hết hạn | MEM005 |
-| `biet.hoang@email.com` | `password123` | Thành viên | Hoạt động | MEM006 |
+| Email                   | Mật khẩu      | Vai trò    | Trạng thái | ID     |
+| ----------------------- | ------------- | ---------- | ---------- | ------ |
+| `librarian@library.com` | `admin123`    | Thủ thư    | Hoạt động  | LIB001 |
+| `ba.nguyen@email.com`   | `password123` | Thành viên | Hoạt động  | MEM002 |
+| `dam.tran@email.com`    | `password123` | Thành viên | Hoạt động  | MEM003 |
+| `cu.le@email.com`       | `password123` | Thành viên | Tạm ngưng  | MEM004 |
+| `binh.pham@email.com`   | `password123` | Thành viên | Hết hạn    | MEM005 |
+| `biet.hoang@email.com`  | `password123` | Thành viên | Hoạt động  | MEM006 |
 
 ### 3.2. Sách / Books
 
@@ -208,13 +208,13 @@ Hệ thống quản lý mượn sách cho một thư viện nhỏ. Hai vai trò 
 
 ### 3.3. Phiếu mượn ban đầu / Initial Borrow Records
 
-| Mã phiếu | Thành viên | Sách | Ngày mượn | Ngày hết hạn | Trạng thái |
-|-----------|-----------|------|-----------|-------------|-----------|
-| BR001 | MEM002 (ba.nguyen) | BOOK003 (Kiểm thử phần mềm nhập môn) | 01/09/2024 | 15/09/2024 | Đang mượn (quá hạn thực tế, cần Thủ thư nhấn "Kiểm tra quá hạn" để cập nhật) |
-| BR002 | MEM003 (dam.tran) | BOOK001 (Lập trình Flutter cơ bản) | 10/08/2024 | 24/08/2024 | Đã trả (20/08/2024) |
-| BR003 | MEM006 (biet.hoang) | BOOK013 (Quản trị nhân sự hiện đại) | 01/10/2024 | 15/10/2024 | Đang mượn |
-| BR004 | MEM002 (ba.nguyen) | BOOK005 (Trí tuệ nhân tạo đại cương) | 01/07/2024 | 15/07/2024 | Đã trả (10/07/2024) |
-| BR005 | MEM003 (dam.tran) | BOOK006 (Kỹ năng giao tiếp) | 01/06/2024 | 15/06/2024 | Đã trả (20/06/2024 — trễ hạn) |
+| Mã phiếu | Thành viên          | Sách                                 | Ngày mượn  | Ngày hết hạn | Trạng thái                                                                   |
+| -------- | ------------------- | ------------------------------------ | ---------- | ------------ | ---------------------------------------------------------------------------- |
+| BR001    | MEM002 (ba.nguyen)  | BOOK003 (Kiểm thử phần mềm nhập môn) | 01/09/2024 | 15/09/2024   | Đang mượn (quá hạn thực tế, cần Thủ thư nhấn "Kiểm tra quá hạn" để cập nhật) |
+| BR002    | MEM003 (dam.tran)   | BOOK001 (Lập trình Flutter cơ bản)   | 10/08/2024 | 24/08/2024   | Đã trả (20/08/2024)                                                          |
+| BR003    | MEM006 (biet.hoang) | BOOK013 (Quản trị nhân sự hiện đại)  | 01/10/2024 | 15/10/2024   | Đang mượn                                                                    |
+| BR004    | MEM002 (ba.nguyen)  | BOOK005 (Trí tuệ nhân tạo đại cương) | 01/07/2024 | 15/07/2024   | Đã trả (10/07/2024)                                                          |
+| BR005    | MEM003 (dam.tran)   | BOOK006 (Kỹ năng giao tiếp)          | 01/06/2024 | 15/06/2024   | Đã trả (20/06/2024 — trễ hạn)                                                |
 
 ### 3.4. Tham số hệ thống / System Parameters
 
