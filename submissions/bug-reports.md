@@ -9,13 +9,14 @@
 | **Group**       | Group 29                 |
 | **Report Date** | From 16/05 to 13/06/2026 |
 
-## Environment [ The same for all bugs ]
+## Environment 
 - Browser: Chrome 148
 - Operating System: Windows 11
 - Application:  Library System 
 - URL: [https://stqa.rbc.vn](https://stqa.rbc.vn/)
+> **Note:** some bugs are related to multiple test cases or even multiple REQs, but the test cases themselves have been determined to be related significantly to only 1 REQ.
 ---
-# BUG-01 :  Title : Book search/filter function is case-sensitive for book category input
+# BUG-01: Book search/filter function is case-sensitive for book category input
 
 | Atrribute             | Details    |
 | --------------------- | ---------- |
@@ -59,7 +60,7 @@ Users may fail to find books when entering uppercase or differently formatted ca
 Normalize both user input and stored category values into the same format (e.g., convert all strings to lowercase before comparison) to ensure case-insensitive search behavior as required by the SRS. 
 
 -----
-# BUG-02 : ## Title : System allows member to borrow a 4th book even though the maximum limit is 3 books
+# BUG-02: System allows member to borrow a 4th book even though the maximum limit is 3 books
 
 | Atrribute             | Details    |
 | --------------------- | ---------- |
@@ -108,7 +109,7 @@ borrowCount >= 3
 ```
 
 ----
-# BUG-03 : Title: Suspended member receives incorrect “expired member” error message when borrowing books
+# BUG-03: Suspended member receives incorrect “expired member” error message when borrowing books
 
 | Atrribute          | Details              |
 | ------------------- | --------------------- |
@@ -154,17 +155,17 @@ The system provides incorrect rejection information to users, potentially causin
 Review the validation and error-handling logic for member status checking to ensure suspended and expired states are handled separately with correct corresponding messages.
 
 ---
-# BUG-04: Title: Member can view and return books borrowed by another member
+# BUG-04: Member can view and return books borrowed by another member
 
-| Atrribute          | Details          |
-| ------------------- | ----------------- |
-| **Bug ID**          | BUG-04            |
-| **Relevant TC**    | TC-28 and TC-42   |
-| **Relevant REQ**   | REQ-05 and REQ-08 |
-| **Severity**          | Critical          |
-| **Tester** | Group 29          |
-| **Date of discovery**  | 22/05/2026        |
-| **State**      | Open              |
+| Atrribute             | Details        |
+| --------------------- | -------------- |
+| **Bug ID**            | BUG-04         |
+| **Relevant TC**       | TC-28, TC-42   |
+| **Relevant REQ**      | REQ-05, REQ-08 |
+| **Severity**          | Critical       |
+| **Tester**            | Group 29       |
+| **Date of discovery** | 22/05/2026     |
+| **State**             | Open           |
 
 ## Preconditions
 - Login using member account:  
@@ -195,7 +196,7 @@ This issue violates access control and authorization rules defined in REQ-05 and
 Implement proper authorization checks before displaying borrow records and processing return actions. The system should verify that the logged-in member is the actual borrower of the selected book before allowing access or return operations.
 
 ----
-# BUG-05: Title : System does not display overdue warning when returning overdue books
+# BUG-05: System does not display overdue warning when returning overdue books
 
 | Atrribute          | Details   |
 | ------------------- | ---------- |
@@ -239,7 +240,7 @@ returnDate > dueDate
 the system should automatically display an overdue warning message before or after completing the return operation.
 
 ----
-# BUG-06: Title : System does not display overdue indication for books returned after the due date
+# BUG-06: System does not display overdue indication for books returned after the due date
 
 | Atrribute          | Details        |
 | ------------------- | --------------- |
@@ -282,17 +283,17 @@ returnDate > dueDate
 the system should display a visible overdue or late-return indicator in the borrow history.
 
 ----
-# BUG-07: Title : Overdue borrow records are not displayed to the corresponding member after overdue checking
+# BUG-07: Overdue borrow records are not displayed to the corresponding member after overdue checking
 
-| Atrribute          | Details              |
-| ------------------- | --------------------- |
-| **Bug ID**          | BUG-07                |
-| **Relevant TC**    | TC-29,TC-31,TC-43 |
-| **Relevant REQ**   | REQ-06            |
-| **Severity**          | Medium                |
-| **Tester** | Group 29              |
-| **Date of discovery**  | 22/05/2026            |
-| **State**      | Open                  |
+| Atrribute             | Details      |
+| --------------------- | ------------ |
+| **Bug ID**            | BUG-07       |
+| **Relevant TC**       | TC-31, TC-43 |
+| **Relevant REQ**      | REQ-06       |
+| **Severity**          | Medium       |
+| **Tester**            | Group 29     |
+| **Date of discovery** | 22/05/2026   |
+| **State**             | Open         |
 
 ## Preconditions
 - Librarian account is available.
@@ -331,17 +332,17 @@ After overdue processing, the system should consistently update and display over
 
 -----
 
-# BUG-08: Title : System rejects valid email format when adding a new member
+# BUG-08: System rejects valid email format when adding a new member
 
-| Atrribute          | Details    |
-| ------------------- | ----------- |
-| **Bug ID**          | BUG-08      |
-| **Relevant TC**    | TC-33,TC-34 |
-| **Relevant REQ**   | REQ-07      |
-| **Severity**          | Medium      |
-| **Tester** | Group 29    |
-| **Date of discovery**  | 22/05/2026  |
-| **State**      | Open        |
+| Atrribute             | Details    |
+| --------------------- | ---------- |
+| **Bug ID**            | BUG-08     |
+| **Relevant TC**       | TC-33      |
+| **Relevant REQ**      | REQ-07     |
+| **Severity**          | Medium     |
+| **Tester**            | Group 29   |
+| **Date of discovery** | 22/05/2026 |
+| **State**             | Open       |
 
 ## Preconditions
 - Login as Librarian.
@@ -380,17 +381,17 @@ Review the email validation logic to ensure valid email formats containing both:
 are accepted correctly.
 
 ----
-# BUG-09: Title : System accepts invalid email formats when adding new member
+# BUG-09: System accepts invalid email formats when adding new member
 
-| Atrribute             | Details     |
-| --------------------- | ----------- |
-| **Bug ID**            | BUG-09      |
-| **Relevant TC**       | TC-34,TC-35 |
-| **Relevant REQ**      | REQ-07      |
-| **Severity**          | Medium         |
-| **Tester**            | Group 29    |
-| **Date of discovery** | 22/05/2026  |
-| **State**             | Open        |
+| Atrribute             | Details    |
+| --------------------- | ---------- |
+| **Bug ID**            | BUG-09     |
+| **Relevant TC**       | TC-34      |
+| **Relevant REQ**      | REQ-07     |
+| **Severity**          | Medium     |
+| **Tester**            | Group 29   |
+| **Date of discovery** | 22/05/2026 |
+| **State**             | Open       |
 
 ## Preconditions
 - Login as Librarian.

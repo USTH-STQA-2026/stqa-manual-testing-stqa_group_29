@@ -61,14 +61,14 @@
 
 # Summary
 
-| TC type                    | Amount             |
-| :------------------------- | :----------------- |
-| Total amount of test cases | 43             |
-| Pass                       | 34             |
-| Fail                       | 9              |
-| Blocked                    | 0              |
-| Not Run                    | 0              |
-| **Pass rate**              | **34/43 \| 79.1%** |
+| TC type                    | Amount              |
+| :------------------------- | :------------------ |
+| Total amount of test cases | 43                  |
+| Pass                       | 34                  |
+| Fail                       | 9                   |
+| Blocked                    | 0                   |
+| Not Run                    | 0                   |
+| **Pass rate**              | **34/43 \| 79.07%** |
 
 ## Results by each REQ
 
