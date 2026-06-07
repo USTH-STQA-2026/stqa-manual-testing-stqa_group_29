@@ -9,28 +9,24 @@
 | **Group**       | Group 29                 |
 | **Report Date** | From 16/05 to 13/06/2026 |
 
-
+## Environment [ The same for all bugs ]
+- Browser: Chrome 148
+- Operating System: Windows 11
+- Application:  Library System 
+- URL: [https://stqa.rbc.vn](https://stqa.rbc.vn/)
 ---
-# BUG-01
+# BUG-01 :  Title : Book search/filter function is case-sensitive for book category input
 
 | Atrribute             | Details    |
 | --------------------- | ---------- |
 | **Bug ID**            | BUG-01     |
 | **Relevant TC**       | TC-13      |
 | **Relevant REQ**      | REQ-03     |
-| **Severity**          | Medium        |
+| **Severity**          | Medium     |
 | **Tester**            | Group 29   |
 | **Date of discovery** | 22/05/2026 |
 | **State**             | Open       |
 
-## Title
-
-Book search/filter function is case-sensitive for book category input
-## Environment
-- Browser: Chrome 148
-- Operating System: Windows 11
-- Application: ABC Library System v1.0
-- URL: [https://stqa.rbc.vn](https://stqa.rbc.vn/)
 ## Preconditions
 - User has successfully logged into the system.
 - User is currently on the “Books” tab.
@@ -63,24 +59,18 @@ Users may fail to find books when entering uppercase or differently formatted ca
 Normalize both user input and stored category values into the same format (e.g., convert all strings to lowercase before comparison) to ensure case-insensitive search behavior as required by the SRS. 
 
 -----
-# BUG-02
+# BUG-02 : ## Title : System allows member to borrow a 4th book even though the maximum limit is 3 books
 
-| Atrribute          | Details             |
-| ------------------- | -------------------- |
-| **Bug ID**          | BUG-02               |
-| **Relevant TC**    | TC-23     |
-| **Relevant REQ**   | REQ-04     |
-| **Severity**          | High      |
-| **Tester** | Group 29  |
-| **Date of discovery**  | 22/05/2026 |
-| **State**      | Open      |
-## Title
-System allows member to borrow a 4th book even though the maximum limit is 3 books
-## Environment
-- Browser: Chrome 148
-- Operating System: Windows 11
-- Application: ABC Library System v1.0
-- URL: [https://stqa.rbc.vn](https://stqa.rbc.vn/)
+| Atrribute             | Details    |
+| --------------------- | ---------- |
+| **Bug ID**            | BUG-02     |
+| **Relevant TC**       | TC-23      |
+| **Relevant REQ**      | REQ-04     |
+| **Severity**          | High       |
+| **Tester**            | Group 29   |
+| **Date of discovery** | 22/05/2026 |
+| **State**             | Open       |
+
 ## Preconditions
 - User logged in with an active member account.
 - Member already borrowed 3 books.
@@ -118,7 +108,7 @@ borrowCount >= 3
 ```
 
 ----
-# BUG-03
+# BUG-03 : Title: Suspended member receives incorrect “expired member” error message when borrowing books
 
 | Atrribute          | Details              |
 | ------------------- | --------------------- |
@@ -129,13 +119,7 @@ borrowCount >= 3
 | **Tester** | Group 29   |
 | **Date of discovery**  | 22/05/2026 |
 | **State**      | Open       |
-## Title
-Suspended member receives incorrect “expired member” error message when borrowing books
-## Environment
-- Browser: Chrome 148
-- Operating System: Windows 11
-- Application: ABC Library System v1.0
-- URL: [https://stqa.rbc.vn](https://stqa.rbc.vn/)
+
 ## Preconditions
 - Login using suspended member account:  
     `cu.le@email.com`
@@ -170,7 +154,7 @@ The system provides incorrect rejection information to users, potentially causin
 Review the validation and error-handling logic for member status checking to ensure suspended and expired states are handled separately with correct corresponding messages.
 
 ---
-# BUG-04
+# BUG-04: Title: Member can view and return books borrowed by another member
 
 | Atrribute          | Details          |
 | ------------------- | ----------------- |
@@ -181,13 +165,7 @@ Review the validation and error-handling logic for member status checking to ens
 | **Tester** | Group 29          |
 | **Date of discovery**  | 22/05/2026        |
 | **State**      | Open              |
-## Title
-Member can view and return books borrowed by another member
-## Environment
-- Browser: Chrome 148
-- Operating System: Windows 11
-- Application: ABC Library System v1.0
-- URL: [https://stqa.rbc.vn](https://stqa.rbc.vn/)
+
 ## Preconditions
 - Login using member account:  
     `ba.nguyen@email.com` (MEM002)
@@ -217,7 +195,7 @@ This issue violates access control and authorization rules defined in REQ-05 and
 Implement proper authorization checks before displaying borrow records and processing return actions. The system should verify that the logged-in member is the actual borrower of the selected book before allowing access or return operations.
 
 ----
-# BUG-05
+# BUG-05: Title : System does not display overdue warning when returning overdue books
 
 | Atrribute          | Details   |
 | ------------------- | ---------- |
@@ -228,13 +206,7 @@ Implement proper authorization checks before displaying borrow records and proce
 | **Tester** | Group 29   |
 | **Date of discovery**  | 22/05/2026 |
 | **State**      | Open       |
-## Title
-System does not display overdue warning when returning overdue books
-## Environment
-- Browser: Chrome 148
-- Operating System: Windows 11
-- Application: ABC Library System v1.0
-- URL: [https://stqa.rbc.vn](https://stqa.rbc.vn/)
+
 ## Preconditions
 - BOOK013 is borrowed by MEM006.
 - Borrow information:
@@ -267,7 +239,7 @@ returnDate > dueDate
 the system should automatically display an overdue warning message before or after completing the return operation.
 
 ----
-# BUG-06
+# BUG-06: Title : System does not display overdue indication for books returned after the due date
 
 | Atrribute          | Details        |
 | ------------------- | --------------- |
@@ -278,13 +250,7 @@ the system should automatically display an overdue warning message before or aft
 | **Tester** | Group 29        |
 | **Date of discovery**  | 22/05/2026 |
 | **State**      | Open            |
-## Title
-System does not display overdue indication for books returned after the due date
-## Environment
-- Browser: Chrome 148
-- Operating System: Windows 11
-- Application: ABC Library System v1.0
-- URL: [https://stqa.rbc.vn](https://stqa.rbc.vn/)
+
 ## Preconditions
 - Borrow record BR005 exists with:
     - Borrow Date: 01/06/2024
@@ -316,7 +282,7 @@ returnDate > dueDate
 the system should display a visible overdue or late-return indicator in the borrow history.
 
 ----
-# BUG-07
+# BUG-07: Title : Overdue borrow records are not displayed to the corresponding member after overdue checking
 
 | Atrribute          | Details              |
 | ------------------- | --------------------- |
@@ -327,13 +293,7 @@ the system should display a visible overdue or late-return indicator in the borr
 | **Tester** | Group 29              |
 | **Date of discovery**  | 22/05/2026            |
 | **State**      | Open                  |
-## Title
-Overdue borrow records are not displayed to the corresponding member after overdue checking
-## Environment
-- Browser: Chrome 148
-- Operating System: Windows 11
-- Application: ABC Library System v1.0
-- URL: [https://stqa.rbc.vn](https://stqa.rbc.vn/)
+
 ## Preconditions
 - Librarian account is available.
 - Member MEM006 has an overdue borrow record:
@@ -371,7 +331,7 @@ After overdue processing, the system should consistently update and display over
 
 -----
 
-# BUG-08
+# BUG-08: Title : System rejects valid email format when adding a new member
 
 | Atrribute          | Details    |
 | ------------------- | ----------- |
@@ -382,13 +342,7 @@ After overdue processing, the system should consistently update and display over
 | **Tester** | Group 29    |
 | **Date of discovery**  | 22/05/2026  |
 | **State**      | Open        |
-## Title
-System rejects valid email format when adding a new member
-## Environment
-- Browser: Chrome 148
-- Operating System: Windows 11
-- Application: ABC Library System v1.0
-- URL: [https://stqa.rbc.vn](https://stqa.rbc.vn/)
+
 ## Preconditions
 - Login as Librarian.
 - Open the “Member Management” section.
@@ -426,7 +380,7 @@ Review the email validation logic to ensure valid email formats containing both:
 are accepted correctly.
 
 ----
-# BUG-09
+# BUG-09: Title : System accepts invalid email formats when adding new member
 
 | Atrribute             | Details     |
 | --------------------- | ----------- |
@@ -437,13 +391,7 @@ are accepted correctly.
 | **Tester**            | Group 29    |
 | **Date of discovery** | 22/05/2026  |
 | **State**             | Open        |
-## Title
-System accepts invalid email formats when adding new member
-## Environment
-- Browser: Chrome 148
-- Operating System: Windows 11
-- Application: ABC Library System v1.0
-- URL: [https://stqa.rbc.vn](https://stqa.rbc.vn/)
+
 ## Preconditions
 - Login as Librarian.
 - Open the “Member Management” section.
